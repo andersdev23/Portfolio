@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Portfolio | Engenheiro de Software</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+  
+  </style>
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Background effects -->
+  <canvas id="stars"></canvas>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#hero">DEV<span>.Anderson</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+    <div class="nav-status">
+      <div class="status-dot"></div>
+      Disponível para oportunidades
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-eyebrow">Engenheiro de Software</div>
+    <h1 class="hero-name glitch" data-text="Anderson Alves">Anderson Alves</h1>
+    <p class="hero-role">
+      Desenvolvedor <span class="highlight" id="typewriter"></span>
+    </p>
+    <p class="hero-desc">
+      Estudante de Engenharia de Software no 6º semestre, apaixonado por construir soluções elegantes com JavaScript, Node.js, React e MySQL. Transformando ideias em código limpo e experiências digitais memoráveis.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">Ver Projetos</a>
+      <a href="#contact" class="btn-secondary">Entre em Contato</a>
+    </div>
+    <div class="hero-scroll">scroll</div>
+  </section>
+
+  <div class="neon-line"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="fade-up">
+      <div class="section-label">01 — Sobre mim</div>
+      <h2 class="section-title">Quem sou eu</h2>
+    </div>
+    <div class="about-grid fade-up">
+      <div class="about-text">
+        <p>Sou um desenvolvedor <strong>full-stack</strong> em formação, cursando Engenharia de Software com foco em construir aplicações web modernas e escaláveis. Tenho sólida base em <strong>JavaScript</strong> tanto no front quanto no back-end.</p>
+        <p>Acredito que bom código é aquele que resolve problemas reais de forma elegante. Estou sempre buscando aprender novas tecnologias e boas práticas de desenvolvimento, como <strong>clean code</strong>, testes e arquitetura de sistemas.</p>
+        <p>Atualmente em busca da minha primeira oportunidade profissional para colocar em prática o que aprendi e crescer junto a uma equipe incrível.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num">6°</div>
+          <div class="stat-label">Semestre — Eng. de Software</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Tecnologias dominadas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Comprometimento</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Vontade de aprender</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="neon-line"></div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="fade-up">
+      <div class="section-label">02 — Habilidades</div>
+      <h2 class="section-title">Stack técnica</h2>
+    </div>
+    <div class="skills-grid fade-up">
+      <div class="skill-card">
+        <span class="skill-icon">⚡</span>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-desc">ES6+, manipulação do DOM, async/await, programação funcional e orientada a objetos.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">⚛️</span>
+        <div class="skill-name">React</div>
+        <div class="skill-desc">Hooks, Context API, componentização, React Router e gerenciamento de estado.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="78"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🟢</span>
+        <div class="skill-name">Node.js + Express</div>
+        <div class="skill-desc">APIs RESTful, middlewares, autenticação JWT, upload de arquivos e integração com bancos.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🗄️</span>
+        <div class="skill-name">MySQL</div>
+        <div class="skill-desc">Modelagem relacional, queries complexas, joins, índices e stored procedures.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="75"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🎨</span>
+        <div class="skill-name">HTML & CSS</div>
+        <div class="skill-desc">Semântica, responsividade, Flexbox, Grid, animações e UI moderna.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🔧</span>
+        <div class="skill-name">Git & DevOps</div>
+        <div class="skill-desc">Controle de versão com Git/GitHub, deploy em Railway, Vercel e Render.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="70"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="neon-line"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="fade-up">
+      <div class="section-label">03 — Portfólio</div>
+      <h2 class="section-title">Projetos em desenvolvimento</h2>
+    </div>
+    <div class="projects-grid fade-up">
+
+      <div class="project-card">
+        <div class="project-img">
+          <div class="project-placeholder">{}</div>
+          <div class="project-overlay"></div>
+        </div>
+        <div class="badge-soon">Em breve</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag accent">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MySQL</span>
+          </div>
+          <div class="project-title">Sistema de Agendamento</div>
+          <div class="project-desc">Plataforma completa para agendamentos online com painel admin, cadastro de clientes e gestão de horários em tempo real.</div>
+          <div class="project-links">
+            <a href="#" class="project-link muted">Em construção →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <div class="project-placeholder">&lt;/&gt;</div>
+          <div class="project-overlay"></div>
+        </div>
+        <div class="badge-soon">Em breve</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag accent">React</span>
+            <span class="tag">Express</span>
+            <span class="tag">JWT</span>
+          </div>
+          <div class="project-title">API RESTful com Auth</div>
+          <div class="project-desc">API robusta com autenticação JWT, refresh token, rate limiting, documentação Swagger e testes automatizados com Jest.</div>
+          <div class="project-links">
+            <a href="#" class="project-link muted">Em construção →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <div class="project-placeholder">◈</div>
+          <div class="project-overlay"></div>
+        </div>
+        <div class="badge-soon">Em breve</div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag accent">React</span>
+            <span class="tag">Charts</span>
+            <span class="tag">MySQL</span>
+          </div>
+          <div class="project-title">Dashboard Financeiro</div>
+          <div class="project-desc">Painel de controle financeiro pessoal com gráficos interativos, categorias de gastos e relatórios mensais exportáveis.</div>
+          <div class="project-links">
+            <a href="#" class="project-link muted">Em construção →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top: 3rem;" class="fade-up">
+      <p style="color: var(--text2); font-size: 0.9rem; margin-bottom: 1.5rem;">
+        Projetos sendo construídos ativamente. Acompanhe no GitHub.
+      </p>
+      <a href="https://github.com/andersdev23" target="_blank" class="btn-primary">Ver GitHub →</a>
+    </div>
+  </section>
+
+  <div class="neon-line"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="fade-up">
+      <div class="section-label" style="justify-content:center;">04 — Contato</div>
+      <h2 class="section-title">Vamos conversar</h2>
+      <p class="contact-sub">
+        Estou aberto a oportunidades de estágio, freelas e projetos colaborativos. Se você tem um projeto interessante ou uma vaga na área, adoraria trocar uma ideia.
+      </p>
+    </div>
+    <div class="contact-links fade-up">
+      <a href="mailto:andersonalves.codes@gmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Anderson,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." class="contact-item">
+        <span>✉</span>andersonalves.codes@gmail.com 
+      </a>
+      <a href="https://www.linkedin.com/in/anderson-a-983170114" target="_blank" class="contact-item">
+        <span>in</span> LinkedIn
+      </a>
+      <a href="https://github.com/andersdev23" target="_blank" class="contact-item">
+        <span>⌥</span> GitHub
+      </a>
+    </div>
+    <div class="fade-up">
+      <a href="https://wa.me/5541988114903" target="_blank" class="btn-primary">Enviar mensagem</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Desenvolvido com <span>♥</span> por <span>Anderson Alves</span> — Engenharia de Software <span>2026</span>.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
