@@ -53,6 +53,7 @@
     let wi = 0, ci = 0, del = false;
     const twEl = document.getElementById('typewriter');
     function typeNext() {
+      if (!twEl) return;
       const word = words[wi];
       if (!del) {
         twEl.textContent = word.slice(0, ++ci);
@@ -64,7 +65,7 @@
         setTimeout(typeNext, 40);
       }
     }
-    typeNext();
+    if (twEl) typeNext();
 
     // ── SCROLL ANIMATIONS ──
     const observer = new IntersectionObserver((entries) => {

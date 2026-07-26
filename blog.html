@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Tecnologia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <canvas id="stars"></canvas>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+
+  <nav>
+    <a class="nav-logo" href="./index.html">DEV<span>.Anderson</span></a>
+    <ul class="nav-links">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="#posts">Artigos</a></li>
+      <li><a href="#topics">Topicos</a></li>
+      <li><a href="#newsletter">Contato</a></li>
+    </ul>
+    <div class="nav-status">
+      <div class="status-dot"></div>
+      Blog de tecnologia
+    </div>
+  </nav>
+
+  <main>
+    <section class="blog-hero">
+      <div class="blog-hero-content fade-up">
+        <div class="hero-eyebrow">Tecnologia, codigo e carreira</div>
+        <h1 class="hero-name glitch" data-text="Blog Tech">Blog Tech</h1>
+        <p class="hero-desc">
+          Anotacoes praticas sobre desenvolvimento web, JavaScript, arquitetura, carreira em tecnologia e estudos de Engenharia de Software.
+        </p>
+        <div class="hero-cta">
+          <a href="#posts" class="btn-primary">Ler artigos</a>
+          <a href="./index.html" class="btn-secondary">Voltar ao portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="neon-line"></div>
+
+    <section id="posts" class="blog-section">
+      <div class="fade-up">
+        <div class="section-label">01 - Artigos</div>
+        <h2 class="section-title">Publicacoes recentes</h2>
+      </div>
+
+      <div class="blog-grid fade-up">
+        <article class="blog-card featured-post">
+          <figure class="post-image">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Tela com codigo em ambiente de desenvolvimento" />
+          </figure>
+          <div class="post-meta">
+            <span>JavaScript</span>
+            <time datetime="2026-07-26">26 Jul 2026</time>
+          </div>
+          <h3>Como pensar em codigo limpo desde o primeiro projeto</h3>
+          <p>
+            Codigo limpo nao nasce de regras decoradas. Ele aparece quando nomes, funcoes e arquivos contam claramente a intencao do sistema.
+          </p>
+          <a href="#codigo-limpo" class="project-link">Ler artigo -></a>
+        </article>
+
+        <article class="blog-card">
+          <figure class="post-image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Notebook com editor de codigo em uma mesa de trabalho" />
+          </figure>
+          <div class="post-meta">
+            <span>Front-end</span>
+            <time datetime="2026-07-18">18 Jul 2026</time>
+          </div>
+          <h3>Componentes React que continuam simples com o tempo</h3>
+          <p>
+            Separar estado, UI e regras de negocio evita que componentes pequenos virem arquivos dificeis de manter.
+          </p>
+          <a href="#componentes-react" class="project-link">Ler artigo -></a>
+        </article>
+
+        <article class="blog-card">
+          <figure class="post-image">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Corredor com racks de servidores em data center" />
+          </figure>
+          <div class="post-meta">
+            <span>Back-end</span>
+            <time datetime="2026-07-10">10 Jul 2026</time>
+          </div>
+          <h3>APIs REST: o basico que precisa estar bem feito</h3>
+          <p>
+            Rotas claras, validacao de dados, codigos HTTP coerentes e mensagens de erro consistentes fazem diferenca no consumo da API.
+          </p>
+          <a href="#apis-rest" class="project-link">Ler artigo -></a>
+        </article>
+
+        <article class="blog-card">
+          <figure class="post-image">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Tela com dados digitais e padroes de banco de dados" />
+          </figure>
+          <div class="post-meta">
+            <span>Banco de dados</span>
+            <time datetime="2026-07-02">02 Jul 2026</time>
+          </div>
+          <h3>Modelagem MySQL para sistemas pequenos</h3>
+          <p>
+            Uma boa modelagem reduz duplicidade, facilita consultas e deixa o projeto preparado para crescer sem refazer tudo.
+          </p>
+          <a href="#modelagem-mysql" class="project-link">Ler artigo -></a>
+        </article>
+
+        <article class="blog-card">
+          <figure class="post-image">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Mesa de estudos com notebook para aprendizado online" />
+          </figure>
+          <div class="post-meta">
+            <span>Carreira</span>
+            <time datetime="2026-06-24">24 Jun 2026</time>
+          </div>
+          <h3>Como organizar estudos sendo estudante de software</h3>
+          <p>
+            Projetos menores, revisao frequente e registro do aprendizado ajudam a transformar teoria em repertorio real.
+          </p>
+          <a href="#rotina-estudos" class="project-link">Ler artigo -></a>
+        </article>
+      </div>
+    </section>
+
+    <div class="neon-line"></div>
+
+    <section class="blog-section article-list">
+      <div class="fade-up">
+        <div class="section-label">02 - Leitura</div>
+        <h2 class="section-title">Artigos completos</h2>
+      </div>
+
+      <article id="codigo-limpo" class="article-entry fade-up">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre codigo limpo" />
+        <div class="article-copy">
+          <div class="post-meta"><span>JavaScript</span><time datetime="2026-07-26">26 Jul 2026</time></div>
+          <h3>Como pensar em codigo limpo desde o primeiro projeto</h3>
+          <p>Codigo limpo comeca antes de escrever a primeira funcao. O ponto principal e deixar claro o motivo de cada parte existir. Um nome bem escolhido, uma funcao pequena e um arquivo com responsabilidade definida ja reduzem muito a dificuldade de manutencao.</p>
+          <p>Em projetos iniciais, o erro comum e tentar resolver tudo no mesmo lugar. Quando a tela, a regra de negocio e o acesso a dados ficam misturados, qualquer ajuste simples passa a ter risco alto. Separar responsabilidades ajuda a encontrar bugs mais rapido e facilita testes.</p>
+          <p>Uma boa pratica e revisar o proprio codigo perguntando: eu entenderia isso daqui a um mes? Se a resposta for nao, vale melhorar nomes, quebrar blocos grandes e remover duplicacoes antes de seguir para a proxima feature.</p>
+        </div>
+      </article>
+
+      <article id="componentes-react" class="article-entry fade-up">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre componentes React" />
+        <div class="article-copy">
+          <div class="post-meta"><span>Front-end</span><time datetime="2026-07-18">18 Jul 2026</time></div>
+          <h3>Componentes React que continuam simples com o tempo</h3>
+          <p>Um componente React fica saudavel quando ele tem um papel claro. Componentes de tela podem buscar e organizar dados, enquanto componentes menores devem focar em apresentar informacao e reagir a eventos simples.</p>
+          <p>Quando um componente cresce demais, procure sinais: muitos estados locais, varias condicoes no JSX, funcoes grandes e props confusas. Nesses casos, extrair partes visuais ou criar hooks especificos costuma deixar o fluxo mais facil de acompanhar.</p>
+          <p>O objetivo nao e criar muitos arquivos sem necessidade. O objetivo e fazer com que cada parte do front-end seja previsivel, facil de testar e simples de alterar quando a interface evoluir.</p>
+        </div>
+      </article>
+
+      <article id="apis-rest" class="article-entry fade-up">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre APIs REST" />
+        <div class="article-copy">
+          <div class="post-meta"><span>Back-end</span><time datetime="2026-07-10">10 Jul 2026</time></div>
+          <h3>APIs REST: o basico que precisa estar bem feito</h3>
+          <p>Uma API boa e previsivel. Rotas devem representar recursos, metodos HTTP precisam carregar significado e respostas devem manter um formato consistente. Isso ajuda o front-end a consumir os dados sem tratamento especial para cada endpoint.</p>
+          <p>Validacao tambem faz parte do contrato. Dados invalidos precisam ser barrados cedo, com mensagens claras e codigo HTTP coerente. Isso evita erros silenciosos e reduz tempo de debug.</p>
+          <p>Outro ponto importante e pensar em seguranca desde o inicio: autenticacao, autorizacao, rate limit e logs basicos ajudam a preparar o sistema para uso real sem transformar a arquitetura em algo pesado demais.</p>
+        </div>
+      </article>
+
+      <article id="modelagem-mysql" class="article-entry fade-up">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre modelagem MySQL" />
+        <div class="article-copy">
+          <div class="post-meta"><span>Banco de dados</span><time datetime="2026-07-02">02 Jul 2026</time></div>
+          <h3>Modelagem MySQL para sistemas pequenos</h3>
+          <p>Mesmo em sistemas pequenos, o banco precisa contar a historia do dominio. Tabelas, chaves e relacionamentos devem refletir como os dados realmente se conectam no negocio.</p>
+          <p>Normalizar dados reduz repeticao e evita inconsistencias, mas tambem e importante pensar nas consultas que a aplicacao vai executar com frequencia. Indices bem escolhidos podem mudar completamente a velocidade de uma tela.</p>
+          <p>Antes de criar tabelas, desenhe entidades principais e relacoes. Depois valide com perguntas simples: consigo listar, filtrar, atualizar e excluir os dados sem criar duplicidade? Se sim, a base esta em bom caminho.</p>
+        </div>
+      </article>
+
+      <article id="rotina-estudos" class="article-entry fade-up">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre rotina de estudos em tecnologia" />
+        <div class="article-copy">
+          <div class="post-meta"><span>Carreira</span><time datetime="2026-06-24">24 Jun 2026</time></div>
+          <h3>Como organizar estudos sendo estudante de software</h3>
+          <p>Estudar tecnologia exige equilibrio entre teoria e pratica. Ler sobre um conceito ajuda, mas construir algo com ele fixa o aprendizado e mostra onde aparecem as duvidas reais.</p>
+          <p>Uma rotina eficiente pode ser simples: escolher um tema, criar um pequeno projeto, registrar o que aprendeu e revisar depois. Esse registro vira material para portfolio, entrevistas e futuras decisoes tecnicas.</p>
+          <p>Consistencia pesa mais que volume. Uma hora bem focada, com objetivo claro e codigo escrito, costuma valer mais do que varias horas pulando entre videos sem aplicar nada.</p>
+        </div>
+      </article>
+    </section>
+
+    <div class="neon-line"></div>
+
+    <section id="topics" class="blog-section">
+      <div class="fade-up">
+        <div class="section-label">03 - Topicos</div>
+        <h2 class="section-title">Categorias do blog</h2>
+      </div>
+
+      <div class="topic-grid fade-up">
+        <a class="topic-card" href="#posts">
+          <span class="topic-code">JS</span>
+          <strong>JavaScript</strong>
+          <small>DOM, async, ES6+ e boas praticas.</small>
+        </a>
+        <a class="topic-card" href="#posts">
+          <span class="topic-code">UI</span>
+          <strong>Front-end</strong>
+          <small>HTML, CSS, React e experiencia do usuario.</small>
+        </a>
+        <a class="topic-card" href="#posts">
+          <span class="topic-code">API</span>
+          <strong>Back-end</strong>
+          <small>Node.js, Express, autenticacao e arquitetura.</small>
+        </a>
+        <a class="topic-card" href="#posts">
+          <span class="topic-code">DB</span>
+          <strong>Dados</strong>
+          <small>MySQL, modelagem e consultas eficientes.</small>
+        </a>
+      </div>
+    </section>
+
+    <div class="neon-line"></div>
+
+    <section id="newsletter" class="blog-section blog-contact">
+      <div class="fade-up">
+        <div class="section-label">04 - Conversa</div>
+        <h2 class="section-title">Tem uma ideia de artigo?</h2>
+        <p class="contact-sub">
+          Me envie uma sugestao de tema, duvida tecnica ou oportunidade de colaboracao.
+        </p>
+        <div class="hero-cta">
+          <a href="mailto:andersonalves.codes@gmail.com?subject=Sugestao%20para%20o%20Blog%20Tech" class="btn-primary">Enviar sugestao</a>
+          <a href="https://github.com/andersdev23" target="_blank" class="btn-secondary">Ver GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="neon-line"></div>
+
+    <section id="curitiba" class="blog-section city-section">
+      <div class="fade-up">
+        <div class="section-label">05 - Localizacao</div>
+        <h2 class="section-title">Curitiba, PR</h2>
+      </div>
+
+      <div class="city-grid fade-up">
+        <div class="city-map">
+          <iframe
+            title="Mapa de Curitiba, Parana"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-49.3890%2C-25.5200%2C-49.1850%2C-25.3300&amp;layer=mapnik&amp;marker=-25.4284%2C-49.2733"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="city-copy">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Curitiba%20jardim%20botanico.jpg"
+            alt="Jardim Botanico de Curitiba, Parana" />
+          <div>
+            <h3>Cidade de tecnologia, planejamento e qualidade urbana</h3>
+            <p>
+              <a href="https://pt.wikipedia.org/wiki/Curitiba" target="_blank" rel="noopener">Curitiba</a>
+              e a capital do Parana e uma das cidades brasileiras mais reconhecidas por planejamento urbano,
+              transporte publico, areas verdes e ecossistema de inovacao. Para quem trabalha com tecnologia,
+              a cidade combina universidades, empresas, eventos e comunidades que fortalecem a formacao de
+              profissionais de software.
+            </p>
+            <p>
+              No contexto deste blog, Curitiba aparece como base local para acompanhar tecnologia, carreira e
+              desenvolvimento web com um olhar conectado ao mercado regional e nacional.
+            </p>
+            <small>Imagem: Wikimedia Commons, Curitiba jardim botanico, Adelano Lazaro, dominio publico.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Blog de <span>tecnologia</span> por <span>Anderson Alves</span> - Engenharia de Software <span>2026</span>.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
