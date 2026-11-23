@@ -3,223 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Tecnologia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne+Mono&display=swap" rel="stylesheet" />
+  <title>Blog Tech — Artigos sobre desenvolvimento | Anderson Alves</title>
+  <meta name="description" content="Artigos de Anderson Alves sobre JavaScript, testes, acessibilidade, Git, React, APIs e banco de dados.">
+  <link rel="canonical" href="https://anderson-alves-portfolio.vercel.app/blog.html">
+  <meta name="theme-color" content="#171a17" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="blog.css" />
 </head>
-<body>
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
-
-  <canvas id="stars"></canvas>
-  <div class="grid-bg"></div>
-  <div class="scanline"></div>
-
-  <nav>
-    <a class="nav-logo" href="./index.html">DEV<span>.Anderson</span></a>
-    <ul class="nav-links">
-      <li><a href="./index.html">Inicio</a></li>
-      <li><a href="#posts">Artigos</a></li>
-      <li><a href="#topics">Topicos</a></li>
-      <li><a href="#newsletter">Contato</a></li>
-    </ul>
-    <div class="nav-status">
-      <div class="status-dot"></div>
-      Blog de tecnologia
+<body class="blog-page">
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="nav-shell container">
+      <a class="nav-logo" href="index.html" aria-label="Anderson Alves, início">aa<span class="logo-dot">.</span><span class="logo-caption">Anderson Alves</span></a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <a href="index.html">Portfólio</a><a href="#posts">Artigos</a><a href="#topics">Tópicos</a>
+      </nav>
+      <a class="nav-contact" href="index.html#contact">Vamos conversar <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
     </div>
-  </nav>
-
-  <main>
+  </header>
+  <main id="main">
     <section class="blog-hero">
       <div class="blog-hero-content fade-up">
-        <div class="hero-eyebrow">Tecnologia, codigo e carreira</div>
-        <h1 class="hero-name glitch" data-text="Blog Tech">Blog Tech</h1>
+        <h1 class="hero-name">Blog Tech<span class="accent">.</span></h1>
         <p class="hero-desc">
-          Anotacoes praticas sobre desenvolvimento web, JavaScript, arquitetura, carreira em tecnologia e estudos de Engenharia de Software.
+          Notas sobre código, decisões de desenvolvimento e o que vale compartilhar pelo caminho. JavaScript, interfaces e engenharia de software na prática.
         </p>
         <div class="hero-cta">
           <a href="#posts" class="btn-primary">Ler artigos</a>
-          <a href="./index.html" class="btn-secondary">Voltar ao portfolio</a>
+          <a href="./index.html" class="btn-secondary">Voltar ao portfólio</a>
         </div>
       </div>
     </section>
 
     <div class="neon-line"></div>
 
-    <section id="posts" class="blog-section">
-      <div class="fade-up">
-        <div class="section-label">01 - Artigos</div>
-        <h2 class="section-title">Publicacoes recentes</h2>
-      </div>
-
-      <div class="blog-grid fade-up">
-        <article class="blog-card featured-post">
-          <figure class="post-image">
-            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Tela com codigo em ambiente de desenvolvimento" />
-          </figure>
-          <div class="post-meta">
-            <span>JavaScript</span>
-            <time datetime="2026-07-26">26 Jul 2026</time>
-          </div>
-          <h3>Como pensar em codigo limpo desde o primeiro projeto</h3>
-          <p>
-            Codigo limpo nao nasce de regras decoradas. Ele aparece quando nomes, funcoes e arquivos contam claramente a intencao do sistema.
-          </p>
-          <a href="#codigo-limpo" class="project-link">Ler artigo -></a>
+    <!-- BLOG_POSTS_START -->
+    <section id="posts" class="blog-section" aria-labelledby="posts-title">
+      <div class="blog-list-heading"><h2 id="posts-title" class="section-title">Publicações recentes<span class="accent">.</span></h2><p>8 artigos para explorar</p></div>
+      <div class="blog-grid">
+        <article class="blog-card featured-post" id="post-testes-javascript">
+          <a class="post-card-link" href="artigos/testes-javascript.html" aria-labelledby="title-testes-javascript">
+            <figure class="post-image"><img src="assets/blog/software-tests.svg" alt="Diagrama de três cenários de teste ligados a uma função JavaScript" width="1200" height="720" loading="lazy" decoding="async"></figure>
+            <div class="post-card-body">
+              <div class="post-meta"><span>JavaScript</span><time datetime="2026-11-22">22 de nov. de 2026</time></div>
+              <h3 id="title-testes-javascript">Testes em JavaScript: comece pela regra de negócio</h3>
+              <p>Um exemplo de reserva de estoque para aprender a testar resultados, limites e erros usando o test runner nativo do Node.js.</p>
+              <span class="post-read-more">Ler artigo <span>3 min de leitura <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
+            </div>
+          </a>
         </article>
-
-        <article class="blog-card">
-          <figure class="post-image">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Notebook com editor de codigo em uma mesa de trabalho" />
-          </figure>
-          <div class="post-meta">
-            <span>Front-end</span>
-            <time datetime="2026-07-18">18 Jul 2026</time>
-          </div>
-          <h3>Componentes React que continuam simples com o tempo</h3>
-          <p>
-            Separar estado, UI e regras de negocio evita que componentes pequenos virem arquivos dificeis de manter.
-          </p>
-          <a href="#componentes-react" class="project-link">Ler artigo -></a>
+        <article class="blog-card" id="post-acessibilidade-teclado">
+          <a class="post-card-link" href="artigos/acessibilidade-teclado.html" aria-labelledby="title-acessibilidade-teclado">
+            <figure class="post-image"><img src="assets/blog/keyboard-accessibility.svg" alt="Ilustração das teclas Tab, Enter e Escape com um indicador de foco" width="1200" height="720" loading="lazy" decoding="async"></figure>
+            <div class="post-card-body">
+              <div class="post-meta"><span>Front-end</span><time datetime="2026-11-22">22 de nov. de 2026</time></div>
+              <h3 id="title-acessibilidade-teclado">Um menu acessível começa pelo teclado</h3>
+              <p>Como criar uma navegação expansível com botão nativo, estado acessível, foco visível e uma verificação manual simples.</p>
+              <span class="post-read-more">Ler artigo <span>3 min de leitura <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
+            </div>
+          </a>
         </article>
-
-        <article class="blog-card">
-          <figure class="post-image">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Corredor com racks de servidores em data center" />
-          </figure>
-          <div class="post-meta">
-            <span>Back-end</span>
-            <time datetime="2026-07-10">10 Jul 2026</time>
-          </div>
-          <h3>APIs REST: o basico que precisa estar bem feito</h3>
-          <p>
-            Rotas claras, validacao de dados, codigos HTTP coerentes e mensagens de erro consistentes fazem diferenca no consumo da API.
-          </p>
-          <a href="#apis-rest" class="project-link">Ler artigo -></a>
+        <article class="blog-card" id="post-git-commits-branches">
+          <a class="post-card-link" href="artigos/git-commits-branches.html" aria-labelledby="title-git-commits-branches">
+            <figure class="post-image"><img src="assets/blog/git-workflow.svg" alt="Diagrama de commits com uma branch que se separa e volta à linha principal" width="1200" height="720" loading="lazy" decoding="async"></figure>
+            <div class="post-card-body">
+              <div class="post-meta"><span>Workflow</span><time datetime="2026-11-22">22 de nov. de 2026</time></div>
+              <h3 id="title-git-commits-branches">Git: commits pequenos, histórico que faz sentido</h3>
+              <p>Um fluxo simples para inspecionar alterações, criar uma branch, preparar um commit e revisar exatamente o que será registrado.</p>
+              <span class="post-read-more">Ler artigo <span>3 min de leitura <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
+            </div>
+          </a>
         </article>
-
-        <article class="blog-card">
-          <figure class="post-image">
-            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Tela com dados digitais e padroes de banco de dados" />
-          </figure>
-          <div class="post-meta">
-            <span>Banco de dados</span>
-            <time datetime="2026-07-02">02 Jul 2026</time>
-          </div>
-          <h3>Modelagem MySQL para sistemas pequenos</h3>
-          <p>
-            Uma boa modelagem reduz duplicidade, facilita consultas e deixa o projeto preparado para crescer sem refazer tudo.
-          </p>
-          <a href="#modelagem-mysql" class="project-link">Ler artigo -></a>
+        <article class="blog-card" id="post-codigo-limpo">
+          <a class="post-card-link" href="artigos/codigo-limpo.html" aria-labelledby="title-codigo-limpo">
+            <figure class="post-image"><img src="assets/blog/clean-code.png" alt="Ilustração de uma função JavaScript com o título Clean Code" width="1200" height="720" loading="lazy" decoding="async"></figure>
+            <div class="post-card-body">
+              <div class="post-meta"><span>JavaScript</span><time datetime="2026-07-26">26 de jul. de 2026</time></div>
+              <h3 id="title-codigo-limpo">Como pensar em código limpo desde o primeiro projeto</h3>
+              <p>Nomes, funções e responsabilidades que deixam a intenção do código mais clara e facilitam a manutenção.</p>
+              <span class="post-read-more">Ler artigo <span>2 min de leitura <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
+            </div>
+          </a>
         </article>
-
-        <article class="blog-card">
-          <figure class="post-image">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Mesa de estudos com notebook para aprendizado online" />
-          </figure>
-          <div class="post-meta">
-            <span>Carreira</span>
-            <time datetime="2026-06-24">24 Jun 2026</time>
-          </div>
-          <h3>Como organizar estudos sendo estudante de software</h3>
-          <p>
-            Projetos menores, revisao frequente e registro do aprendizado ajudam a transformar teoria em repertorio real.
-          </p>
-          <a href="#rotina-estudos" class="project-link">Ler artigo -></a>
+        <article class="blog-card" id="post-componentes-react">
+          <a class="post-card-link" href="artigos/componentes-react.html" aria-labelledby="title-componentes-react">
+            <figure class="post-image"><img src="assets/blog/react-components.png" alt="Diagrama ilustrativo de componentes de uma interface React" width="1200" height="720" loading="lazy" decoding="async"></figure>
+            <div class="post-card-body">
+              <div class="post-meta"><span>Front-end</span><time datetime="2026-07-18">18 de jul. de 2026</time></div>
+              <h3 id="title-componentes-react">Componentes React que continuam simples com o tempo</h3>
+              <p>Como reconhecer responsabilidades e evitar que componentes pequenos acumulem regras difíceis de manter.</p>
+              <span class="post-read-more">Ler artigo <span>2 min de leitura <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
+            </div>
+          </a>
+        </article>
+        <article class="blog-card" id="post-apis-rest">
+          <a class="post-card-link" href="artigos/apis-rest.html" aria-labelledby="title-apis-rest">
+            <figure class="post-image"><img src="assets/blog/api-rest.png" alt="Ilustração de uma requisição e resposta de API REST" width="1200" height="720" loading="lazy" decoding="async"></figure>
+            <div class="post-card-body">
+              <div class="post-meta"><span>Back-end</span><time datetime="2026-07-10">10 de jul. de 2026</time></div>
+              <h3 id="title-apis-rest">APIs REST: o básico que precisa estar bem feito</h3>
+              <p>Rotas claras, validação e respostas consistentes para tornar uma API mais previsível para quem a consome.</p>
+              <span class="post-read-more">Ler artigo <span>2 min de leitura <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
+            </div>
+          </a>
+        </article>
+        <article class="blog-card" id="post-modelagem-mysql">
+          <a class="post-card-link" href="artigos/modelagem-mysql.html" aria-labelledby="title-modelagem-mysql">
+            <figure class="post-image"><img src="assets/blog/mysql-modeling.png" alt="Ilustração de tabelas e relacionamentos de banco de dados" width="1200" height="720" loading="lazy" decoding="async"></figure>
+            <div class="post-card-body">
+              <div class="post-meta"><span>Banco de dados</span><time datetime="2026-07-02">02 de jul. de 2026</time></div>
+              <h3 id="title-modelagem-mysql">Modelagem MySQL para sistemas pequenos</h3>
+              <p>Entidades e relacionamentos que representam o domínio sem perder de vista as consultas da aplicação.</p>
+              <span class="post-read-more">Ler artigo <span>2 min de leitura <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
+            </div>
+          </a>
+        </article>
+        <article class="blog-card" id="post-rotina-estudos">
+          <a class="post-card-link" href="artigos/rotina-estudos.html" aria-labelledby="title-rotina-estudos">
+            <figure class="post-image"><img src="assets/blog/study-routine.png" alt="Ilustração de uma rotina de estudos de desenvolvimento de software" width="1200" height="720" loading="lazy" decoding="async"></figure>
+            <div class="post-card-body">
+              <div class="post-meta"><span>Carreira</span><time datetime="2026-06-24">24 de jun. de 2026</time></div>
+              <h3 id="title-rotina-estudos">Como organizar estudos sendo estudante de software</h3>
+              <p>Objetivos pequenos, prática e revisão para transformar estudo em conhecimento que pode ser aplicado.</p>
+              <span class="post-read-more">Ler artigo <span>2 min de leitura <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
+            </div>
+          </a>
         </article>
       </div>
     </section>
-
-    <div class="neon-line"></div>
-
-    <section class="blog-section article-list">
-      <div class="fade-up">
-        <div class="section-label">02 - Leitura</div>
-        <h2 class="section-title">Artigos completos</h2>
-      </div>
-
-      <article id="codigo-limpo" class="article-entry fade-up">
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre codigo limpo" />
-        <div class="article-copy">
-          <div class="post-meta"><span>JavaScript</span><time datetime="2026-07-26">26 Jul 2026</time></div>
-          <h3>Como pensar em codigo limpo desde o primeiro projeto</h3>
-          <p>Codigo limpo comeca antes de escrever a primeira funcao. O ponto principal e deixar claro o motivo de cada parte existir. Um nome bem escolhido, uma funcao pequena e um arquivo com responsabilidade definida ja reduzem muito a dificuldade de manutencao.</p>
-          <p>Em projetos iniciais, o erro comum e tentar resolver tudo no mesmo lugar. Quando a tela, a regra de negocio e o acesso a dados ficam misturados, qualquer ajuste simples passa a ter risco alto. Separar responsabilidades ajuda a encontrar bugs mais rapido e facilita testes.</p>
-          <p>Uma boa pratica e revisar o proprio codigo perguntando: eu entenderia isso daqui a um mes? Se a resposta for nao, vale melhorar nomes, quebrar blocos grandes e remover duplicacoes antes de seguir para a proxima feature.</p>
-        </div>
-      </article>
-
-      <article id="componentes-react" class="article-entry fade-up">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre componentes React" />
-        <div class="article-copy">
-          <div class="post-meta"><span>Front-end</span><time datetime="2026-07-18">18 Jul 2026</time></div>
-          <h3>Componentes React que continuam simples com o tempo</h3>
-          <p>Um componente React fica saudavel quando ele tem um papel claro. Componentes de tela podem buscar e organizar dados, enquanto componentes menores devem focar em apresentar informacao e reagir a eventos simples.</p>
-          <p>Quando um componente cresce demais, procure sinais: muitos estados locais, varias condicoes no JSX, funcoes grandes e props confusas. Nesses casos, extrair partes visuais ou criar hooks especificos costuma deixar o fluxo mais facil de acompanhar.</p>
-          <p>O objetivo nao e criar muitos arquivos sem necessidade. O objetivo e fazer com que cada parte do front-end seja previsivel, facil de testar e simples de alterar quando a interface evoluir.</p>
-        </div>
-      </article>
-
-      <article id="apis-rest" class="article-entry fade-up">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre APIs REST" />
-        <div class="article-copy">
-          <div class="post-meta"><span>Back-end</span><time datetime="2026-07-10">10 Jul 2026</time></div>
-          <h3>APIs REST: o basico que precisa estar bem feito</h3>
-          <p>Uma API boa e previsivel. Rotas devem representar recursos, metodos HTTP precisam carregar significado e respostas devem manter um formato consistente. Isso ajuda o front-end a consumir os dados sem tratamento especial para cada endpoint.</p>
-          <p>Validacao tambem faz parte do contrato. Dados invalidos precisam ser barrados cedo, com mensagens claras e codigo HTTP coerente. Isso evita erros silenciosos e reduz tempo de debug.</p>
-          <p>Outro ponto importante e pensar em seguranca desde o inicio: autenticacao, autorizacao, rate limit e logs basicos ajudam a preparar o sistema para uso real sem transformar a arquitetura em algo pesado demais.</p>
-        </div>
-      </article>
-
-      <article id="modelagem-mysql" class="article-entry fade-up">
-        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre modelagem MySQL" />
-        <div class="article-copy">
-          <div class="post-meta"><span>Banco de dados</span><time datetime="2026-07-02">02 Jul 2026</time></div>
-          <h3>Modelagem MySQL para sistemas pequenos</h3>
-          <p>Mesmo em sistemas pequenos, o banco precisa contar a historia do dominio. Tabelas, chaves e relacionamentos devem refletir como os dados realmente se conectam no negocio.</p>
-          <p>Normalizar dados reduz repeticao e evita inconsistencias, mas tambem e importante pensar nas consultas que a aplicacao vai executar com frequencia. Indices bem escolhidos podem mudar completamente a velocidade de uma tela.</p>
-          <p>Antes de criar tabelas, desenhe entidades principais e relacoes. Depois valide com perguntas simples: consigo listar, filtrar, atualizar e excluir os dados sem criar duplicidade? Se sim, a base esta em bom caminho.</p>
-        </div>
-      </article>
-
-      <article id="rotina-estudos" class="article-entry fade-up">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Imagem do artigo sobre rotina de estudos em tecnologia" />
-        <div class="article-copy">
-          <div class="post-meta"><span>Carreira</span><time datetime="2026-06-24">24 Jun 2026</time></div>
-          <h3>Como organizar estudos sendo estudante de software</h3>
-          <p>Estudar tecnologia exige equilibrio entre teoria e pratica. Ler sobre um conceito ajuda, mas construir algo com ele fixa o aprendizado e mostra onde aparecem as duvidas reais.</p>
-          <p>Uma rotina eficiente pode ser simples: escolher um tema, criar um pequeno projeto, registrar o que aprendeu e revisar depois. Esse registro vira material para portfolio, entrevistas e futuras decisoes tecnicas.</p>
-          <p>Consistencia pesa mais que volume. Uma hora bem focada, com objetivo claro e codigo escrito, costuma valer mais do que varias horas pulando entre videos sem aplicar nada.</p>
-        </div>
-      </article>
-    </section>
+    <!-- BLOG_POSTS_END -->
 
     <div class="neon-line"></div>
 
     <section id="topics" class="blog-section">
       <div class="fade-up">
-        <div class="section-label">03 - Topicos</div>
-        <h2 class="section-title">Categorias do blog</h2>
+        <h2 class="section-title">Explore por assunto</h2>
       </div>
 
       <div class="topic-grid fade-up">
-        <a class="topic-card" href="#posts">
+        <a class="topic-card" href="#post-testes-javascript">
           <span class="topic-code">JS</span>
           <strong>JavaScript</strong>
-          <small>DOM, async, ES6+ e boas praticas.</small>
+          <small>DOM, async, ES6+ e boas práticas.</small>
         </a>
-        <a class="topic-card" href="#posts">
+        <a class="topic-card" href="#post-acessibilidade-teclado">
           <span class="topic-code">UI</span>
           <strong>Front-end</strong>
-          <small>HTML, CSS, React e experiencia do usuario.</small>
+          <small>HTML, CSS, React e experiência do usuário.</small>
         </a>
-        <a class="topic-card" href="#posts">
+        <a class="topic-card" href="#post-apis-rest">
           <span class="topic-code">API</span>
           <strong>Back-end</strong>
-          <small>Node.js, Express, autenticacao e arquitetura.</small>
+          <small>Node.js, Express, autenticação e arquitetura.</small>
         </a>
-        <a class="topic-card" href="#posts">
+        <a class="topic-card" href="#post-modelagem-mysql">
           <span class="topic-code">DB</span>
           <strong>Dados</strong>
           <small>MySQL, modelagem e consultas eficientes.</small>
@@ -231,13 +170,12 @@
 
     <section id="newsletter" class="blog-section blog-contact">
       <div class="fade-up">
-        <div class="section-label">04 - Conversa</div>
         <h2 class="section-title">Tem uma ideia de artigo?</h2>
         <p class="contact-sub">
-          Me envie uma sugestao de tema, duvida tecnica ou oportunidade de colaboracao.
+          Me envie uma sugestão de tema, dúvida técnica ou oportunidade de colaboração.
         </p>
         <div class="hero-cta">
-          <a href="mailto:andersonalves.codes@gmail.com?subject=Sugestao%20para%20o%20Blog%20Tech" class="btn-primary">Enviar sugestao</a>
+          <a href="mailto:andersonalves.codes@gmail.com?subject=Sugestao%20para%20o%20Blog%20Tech" class="btn-primary">Enviar sugestão</a>
           <a href="https://github.com/andersdev23" target="_blank" class="btn-secondary">Ver GitHub</a>
         </div>
       </div>
@@ -247,7 +185,6 @@
 
     <section id="curitiba" class="blog-section city-section">
       <div class="fade-up">
-        <div class="section-label">05 - Localizacao</div>
         <h2 class="section-title">Curitiba, PR</h2>
       </div>
 

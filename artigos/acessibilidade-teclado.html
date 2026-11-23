@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Um menu acessível começa pelo teclado | Anderson Alves</title>
+  <meta name="description" content="Como criar uma navegação expansível com botão nativo, estado acessível, foco visível e uma verificação manual simples.">
+  <meta name="author" content="Anderson Alves">
+  <meta name="theme-color" content="#171a17">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Um menu acessível começa pelo teclado">
+  <meta property="og:description" content="Como criar uma navegação expansível com botão nativo, estado acessível, foco visível e uma verificação manual simples.">
+  <meta property="og:url" content="https://anderson-alves-portfolio.vercel.app/artigos/acessibilidade-teclado.html">
+  <meta property="og:image" content="https://anderson-alves-portfolio.vercel.app/assets/blog/keyboard-accessibility.svg">
+  <link rel="canonical" href="https://anderson-alves-portfolio.vercel.app/artigos/acessibilidade-teclado.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../article.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Um menu acessível começa pelo teclado","description":"Como criar uma navegação expansível com botão nativo, estado acessível, foco visível e uma verificação manual simples.","image":"https://anderson-alves-portfolio.vercel.app/assets/blog/keyboard-accessibility.svg","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Person","name":"Anderson Alves","url":"https://anderson-alves-portfolio.vercel.app/"},"inLanguage":"pt-BR","mainEntityOfPage":{"@type":"WebPage","@id":"https://anderson-alves-portfolio.vercel.app/artigos/acessibilidade-teclado.html"}}</script>
+  <script src="../script.js" defer></script>
+</head>
+<body class="article-page">
+
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header"><div class="nav-shell container">
+    <a class="nav-logo" href="../index.html" aria-label="Anderson Alves, início">aa<span class="logo-dot">.</span><span class="logo-caption">Anderson Alves</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal"><a href="../index.html">Portfólio</a><a href="../blog.html#posts">Artigos</a><a href="../blog.html#topics">Tópicos</a></nav>
+    <a class="nav-contact" href="../index.html#contact">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+  </div></header>
+  <main id="main" class="article-main container">
+    <nav class="breadcrumbs" aria-label="Caminho de navegação"><a href="../blog.html">Blog</a><span aria-hidden="true">/</span><span>Front-end</span></nav>
+    <article aria-labelledby="article-title">
+      <header class="article-header">
+        <h1 id="article-title">Um menu acessível começa pelo teclado</h1>
+        <p class="article-intro">Se a navegação depende de acertar um ícone com o mouse, parte da experiência ficou de fora. Um teste com teclado revela rapidamente se os controles podem ser encontrados, acionados e compreendidos.</p>
+        <div class="article-meta"><a href="../index.html#about" class="article-author"><span class="author-initials" aria-hidden="true">aa.</span>Anderson Alves</a><time datetime="2026-11-22">22 de nov. de 2026</time><span>3 min de leitura</span></div>
+      </header>
+      <figure class="article-cover"><img src="../assets/blog/keyboard-accessibility.svg" alt="Ilustração das teclas Tab, Enter e Escape com um indicador de foco" width="1200" height="720" fetchpriority="high"><figcaption>Front-end · Notas de desenvolvimento</figcaption></figure>
+      <div class="article-layout">
+        <aside class="article-sidebar"><nav class="article-toc" aria-labelledby="contents-title"><h2 id="contents-title">Neste artigo</h2><ol><li><a href="#comece-pelo-html">Use o elemento que já sabe ser um botão</a></li><li><a href="#sincronize-o-estado">Mantenha visibilidade e estado de acordo</a></li><li><a href="#preserve-o-foco">Deixe claro onde o foco está</a></li><li><a href="#teste-a-navegacao">Faça uma volta completa sem o mouse</a></li></ol><a class="article-back" href="../blog.html#posts">Voltar para todos os artigos</a></nav></aside>
+        <div class="article-body">
+          <section id="comece-pelo-html" aria-labelledby="heading-comece-pelo-html"><h2 id="heading-comece-pelo-html">Use o elemento que já sabe ser um botão</h2><p>Para abrir ou fechar uma região da página, comece com <code>&lt;button type="button"&gt;</code>. Ele já participa da navegação por teclado e responde à ativação nativa. Um <code>div</code> com um evento de clique exigiria recriar parte desse comportamento.</p><p>Uma navegação de site comum pode ser tratada como uma região expansível. Ela não precisa receber o papel ARIA de menu de aplicativo, que traz outras expectativas de interação. Links continuam sendo links, e o botão controla a visibilidade deles.</p><p>No exemplo, o botão começa oculto e os links começam disponíveis. Assim, sem JavaScript, a navegação continua utilizável. O script apresenta o controle e passa a administrar o estado expandido.</p><div class="code-example"><span class="code-language">HTML</span><pre tabindex="0" aria-label="Exemplo de código: HTML"><code>&lt;button id=&quot;abrir-navegacao&quot; type=&quot;button&quot;
+  aria-expanded=&quot;false&quot; aria-controls=&quot;navegacao&quot; hidden&gt;
+  Navegação
+&lt;/button&gt;
+
+&lt;nav id=&quot;navegacao&quot; aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;index.html&quot;&gt;Início&lt;/a&gt;
+  &lt;a href=&quot;blog.html&quot;&gt;Blog&lt;/a&gt;
+&lt;/nav&gt;</code></pre></div></section>
+          <section id="sincronize-o-estado" aria-labelledby="heading-sincronize-o-estado"><h2 id="heading-sincronize-o-estado">Mantenha visibilidade e estado de acordo</h2><p>O atributo <code>aria-expanded</code> informa se o conteúdo controlado está aberto. O atributo <code>hidden</code> oculta a região quando ela não deve estar disponível. Atualize os dois na mesma função para evitar uma interface visível que seja anunciada como fechada, ou o contrário.</p><div class="code-example"><span class="code-language">JavaScript · executar após o HTML</span><pre tabindex="0" aria-label="Exemplo de código: JavaScript · executar após o HTML"><code>const botao = document.getElementById(&#39;abrir-navegacao&#39;);
+const navegacao = document.getElementById(&#39;navegacao&#39;);
+
+function definirAberto(aberto) {
+  botao.setAttribute(&#39;aria-expanded&#39;, String(aberto));
+  navegacao.hidden = !aberto;
+}
+
+botao.hidden = false;
+definirAberto(false);
+
+botao.addEventListener(&#39;click&#39;, () =&gt; {
+  const aberto = botao.getAttribute(&#39;aria-expanded&#39;) === &#39;true&#39;;
+  definirAberto(!aberto);
+});
+
+document.addEventListener(&#39;keydown&#39;, (evento) =&gt; {
+  const focoNaNavegacao = navegacao.contains(document.activeElement);
+  const focoNoBotao = document.activeElement === botao;
+
+  if (evento.key === &#39;Escape&#39; &amp;&amp; !navegacao.hidden &amp;&amp;
+      (focoNaNavegacao || focoNoBotao)) {
+    definirAberto(false);
+    botao.focus();
+  }
+});</code></pre></div><p>Enter e Espaço acionam o botão por seu comportamento nativo. O tratamento adicional de Escape fecha a região quando o foco está nela ou no próprio controle e devolve o foco ao botão. Como essa navegação não é modal, a pessoa pode seguir usando Tab para sair dela.</p></section>
+          <section id="preserve-o-foco" aria-labelledby="heading-preserve-o-foco"><h2 id="heading-preserve-o-foco">Deixe claro onde o foco está</h2><p>O foco precisa se destacar do fundo. Remover o contorno sem oferecer outro indicador faz a navegação parecer perdida. Uma regra simples pode usar a cor de destaque do próprio site:</p><div class="code-example"><span class="code-language">CSS</span><pre tabindex="0" aria-label="Exemplo de código: CSS"><code>button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #c1ed78;
+  outline-offset: 5px;
+}
+
+button {
+  min-height: 44px;
+  padding: 10px 16px;
+}
+
+[hidden] {
+  display: none !important;
+}</code></pre></div><p>O seletor de <code>hidden</code> evita que outra regra visual, como <code>display: flex</code>, faça o conteúdo fechado reaparecer. O tamanho do controle também facilita o toque em telas pequenas.</p></section>
+          <section id="teste-a-navegacao" aria-labelledby="heading-teste-a-navegacao"><h2 id="heading-teste-a-navegacao">Faça uma volta completa sem o mouse</h2><ol><li>Use Tab até chegar ao botão e confira se o foco está visível.</li><li>Abra com Enter; repita usando Espaço.</li><li>Avance pelos links com Tab e volte com Shift + Tab.</li><li>Pressione Escape dentro da navegação: ela deve fechar e o foco deve voltar ao botão.</li><li>Confirme que os links ocultos deixam de participar da sequência de Tab.</li><li>Desative o JavaScript e confirme que os links iniciais continuam disponíveis.</li></ol><p>Esse roteiro não substitui uma avaliação completa de acessibilidade. Ele cobre um conjunto pequeno e verificável de comportamentos que costuma ser esquecido quando a revisão se limita ao visual.</p></section>
+          <section class="article-references" id="referencias" aria-labelledby="references-title"><h2 id="references-title">Referências e próximos passos</h2><p>Documentação oficial para consultar os comportamentos apresentados:</p><ul><li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/" target="_blank" rel="noopener noreferrer">W3C WAI — Disclosure pattern <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span class="sr-only"> (abre em nova aba)</span></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button" target="_blank" rel="noopener noreferrer">MDN — O elemento button <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span class="sr-only"> (abre em nova aba)</span></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/hidden" target="_blank" rel="noopener noreferrer">MDN — O atributo hidden <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span class="sr-only"> (abre em nova aba)</span></a></li></ul></section>
+          <div class="article-end"><p>Uma dúvida ou uma ideia a partir desta leitura?</p><a href="mailto:andersonalves.codes@gmail.com?subject=Sobre%20o%20artigo%3A%20Um%20menu%20acess%C3%ADvel%20come%C3%A7a%20pelo%20teclado">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
+        </div>
+      </div>
+    </article>
+    <nav class="article-pagination" aria-label="Navegação entre artigos"><a href="../blog.html#posts">Voltar ao blog</a><a href="git-commits-branches.html"><span>Próxima leitura</span>Git: commits pequenos, histórico que faz sentido <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav>
+    <section class="related-section" aria-labelledby="related-title"><h2 id="related-title">Continue a leitura<span class="accent">.</span></h2><div class="related-grid"><a href="componentes-react.html"><span>Front-end · 2 min</span><h3>Componentes React que continuam simples com o tempo</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="testes-javascript.html"><span>JavaScript · 3 min</span><h3>Testes em JavaScript: comece pela regra de negócio</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></section>
+  </main>
+  <footer class="site-footer container"><a class="nav-logo" href="../index.html" aria-label="Ir ao portfólio">aa<span class="logo-dot">.</span></a><p>Notas de desenvolvimento por Anderson Alves.</p><span>© <span data-year>2026</span></span><a class="back-to-top" href="#main">Voltar ao início</a></footer>
+</body>
+</html>

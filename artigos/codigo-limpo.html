@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como pensar em código limpo desde o primeiro projeto | Anderson Alves</title>
+  <meta name="description" content="Nomes, funções e responsabilidades que deixam a intenção do código mais clara e facilitam a manutenção.">
+  <meta name="author" content="Anderson Alves">
+  <meta name="theme-color" content="#171a17">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Como pensar em código limpo desde o primeiro projeto">
+  <meta property="og:description" content="Nomes, funções e responsabilidades que deixam a intenção do código mais clara e facilitam a manutenção.">
+  <meta property="og:url" content="https://anderson-alves-portfolio.vercel.app/artigos/codigo-limpo.html">
+  <meta property="og:image" content="https://anderson-alves-portfolio.vercel.app/assets/blog/clean-code.png">
+  <link rel="canonical" href="https://anderson-alves-portfolio.vercel.app/artigos/codigo-limpo.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../article.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Como pensar em código limpo desde o primeiro projeto","description":"Nomes, funções e responsabilidades que deixam a intenção do código mais clara e facilitam a manutenção.","image":"https://anderson-alves-portfolio.vercel.app/assets/blog/clean-code.png","datePublished":"2026-07-26","dateModified":"2026-11-22","author":{"@type":"Person","name":"Anderson Alves","url":"https://anderson-alves-portfolio.vercel.app/"},"inLanguage":"pt-BR","mainEntityOfPage":{"@type":"WebPage","@id":"https://anderson-alves-portfolio.vercel.app/artigos/codigo-limpo.html"}}</script>
+  <script src="../script.js" defer></script>
+</head>
+<body class="article-page">
+
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header"><div class="nav-shell container">
+    <a class="nav-logo" href="../index.html" aria-label="Anderson Alves, início">aa<span class="logo-dot">.</span><span class="logo-caption">Anderson Alves</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal"><a href="../index.html">Portfólio</a><a href="../blog.html#posts">Artigos</a><a href="../blog.html#topics">Tópicos</a></nav>
+    <a class="nav-contact" href="../index.html#contact">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+  </div></header>
+  <main id="main" class="article-main container">
+    <nav class="breadcrumbs" aria-label="Caminho de navegação"><a href="../blog.html">Blog</a><span aria-hidden="true">/</span><span>JavaScript</span></nav>
+    <article aria-labelledby="article-title">
+      <header class="article-header">
+        <h1 id="article-title">Como pensar em código limpo desde o primeiro projeto</h1>
+        <p class="article-intro">Código limpo não nasce de regras decoradas. Ele aparece quando nomes, funções e arquivos contam claramente a intenção do sistema.</p>
+        <div class="article-meta"><a href="../index.html#about" class="article-author"><span class="author-initials" aria-hidden="true">aa.</span>Anderson Alves</a><time datetime="2026-07-26">26 de jul. de 2026</time><span>2 min de leitura</span></div>
+      </header>
+      <figure class="article-cover"><img src="../assets/blog/clean-code.png" alt="Ilustração de uma função JavaScript com o título Clean Code" width="1200" height="720" fetchpriority="high"><figcaption>JavaScript · Notas de desenvolvimento</figcaption></figure>
+      <div class="article-layout">
+        <aside class="article-sidebar"><nav class="article-toc" aria-labelledby="contents-title"><h2 id="contents-title">Neste artigo</h2><ol><li><a href="#intencao-clara">Deixe clara a intenção de cada parte</a></li><li><a href="#responsabilidades">Separe responsabilidades quando fizer sentido</a></li><li><a href="#revise-o-codigo">Revise pensando na próxima leitura</a></li></ol><a class="article-back" href="../blog.html#posts">Voltar para todos os artigos</a></nav></aside>
+        <div class="article-body">
+          <section id="intencao-clara" aria-labelledby="heading-intencao-clara"><h2 id="heading-intencao-clara">Deixe clara a intenção de cada parte</h2><p>Código limpo começa antes de escrever a primeira função. O ponto principal é deixar claro o motivo de cada parte existir. Um nome bem escolhido, uma função pequena e um arquivo com responsabilidade definida já reduzem muito a dificuldade de manutenção.</p><p>Prefira nomes que expliquem o significado de um valor ou de uma ação no contexto do projeto. Quem lê deve entender o que está acontecendo sem precisar procurar uma explicação em outro arquivo.</p></section>
+          <section id="responsabilidades" aria-labelledby="heading-responsabilidades"><h2 id="heading-responsabilidades">Separe responsabilidades quando fizer sentido</h2><p>Em projetos iniciais, é comum tentar resolver tudo no mesmo lugar. Quando a tela, a regra de negócio e o acesso a dados ficam misturados, um ajuste simples passa a afetar mais partes do sistema.</p><p>Separar responsabilidades ajuda a encontrar bugs e facilita os testes. A divisão deve acompanhar problemas concretos do código, em vez de criar camadas que ainda não têm uma função clara.</p></section>
+          <section id="revise-o-codigo" aria-labelledby="heading-revise-o-codigo"><h2 id="heading-revise-o-codigo">Revise pensando na próxima leitura</h2><p>Uma boa prática é revisar o próprio código perguntando: eu entenderia isso daqui a um mês? Se a resposta for não, vale melhorar nomes, dividir blocos difíceis de acompanhar e remover duplicações antes de seguir para a próxima funcionalidade.</p><p>O objetivo da revisão é diminuir o esforço necessário para compreender e alterar o sistema. Uma solução mais curta nem sempre é mais clara; escolha a forma que comunica melhor a regra.</p></section>
+
+          <div class="article-end"><p>Uma dúvida ou uma ideia a partir desta leitura?</p><a href="mailto:andersonalves.codes@gmail.com?subject=Sobre%20o%20artigo%3A%20Como%20pensar%20em%20c%C3%B3digo%20limpo%20desde%20o%20primeiro%20projeto">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
+        </div>
+      </div>
+    </article>
+    <nav class="article-pagination" aria-label="Navegação entre artigos"><a href="../blog.html#posts">Voltar ao blog</a><a href="componentes-react.html"><span>Próxima leitura</span>Componentes React que continuam simples com o tempo <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav>
+    <section class="related-section" aria-labelledby="related-title"><h2 id="related-title">Continue a leitura<span class="accent">.</span></h2><div class="related-grid"><a href="testes-javascript.html"><span>JavaScript · 3 min</span><h3>Testes em JavaScript: comece pela regra de negócio</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="acessibilidade-teclado.html"><span>Front-end · 3 min</span><h3>Um menu acessível começa pelo teclado</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></section>
+  </main>
+  <footer class="site-footer container"><a class="nav-logo" href="../index.html" aria-label="Ir ao portfólio">aa<span class="logo-dot">.</span></a><p>Notas de desenvolvimento por Anderson Alves.</p><span>© <span data-year>2026</span></span><a class="back-to-top" href="#main">Voltar ao início</a></footer>
+</body>
+</html>

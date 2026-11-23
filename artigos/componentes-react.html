@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componentes React que continuam simples com o tempo | Anderson Alves</title>
+  <meta name="description" content="Como reconhecer responsabilidades e evitar que componentes pequenos acumulem regras difíceis de manter.">
+  <meta name="author" content="Anderson Alves">
+  <meta name="theme-color" content="#171a17">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Componentes React que continuam simples com o tempo">
+  <meta property="og:description" content="Como reconhecer responsabilidades e evitar que componentes pequenos acumulem regras difíceis de manter.">
+  <meta property="og:url" content="https://anderson-alves-portfolio.vercel.app/artigos/componentes-react.html">
+  <meta property="og:image" content="https://anderson-alves-portfolio.vercel.app/assets/blog/react-components.png">
+  <link rel="canonical" href="https://anderson-alves-portfolio.vercel.app/artigos/componentes-react.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../article.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Componentes React que continuam simples com o tempo","description":"Como reconhecer responsabilidades e evitar que componentes pequenos acumulem regras difíceis de manter.","image":"https://anderson-alves-portfolio.vercel.app/assets/blog/react-components.png","datePublished":"2026-07-18","dateModified":"2026-11-22","author":{"@type":"Person","name":"Anderson Alves","url":"https://anderson-alves-portfolio.vercel.app/"},"inLanguage":"pt-BR","mainEntityOfPage":{"@type":"WebPage","@id":"https://anderson-alves-portfolio.vercel.app/artigos/componentes-react.html"}}</script>
+  <script src="../script.js" defer></script>
+</head>
+<body class="article-page">
+
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header"><div class="nav-shell container">
+    <a class="nav-logo" href="../index.html" aria-label="Anderson Alves, início">aa<span class="logo-dot">.</span><span class="logo-caption">Anderson Alves</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal"><a href="../index.html">Portfólio</a><a href="../blog.html#posts">Artigos</a><a href="../blog.html#topics">Tópicos</a></nav>
+    <a class="nav-contact" href="../index.html#contact">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+  </div></header>
+  <main id="main" class="article-main container">
+    <nav class="breadcrumbs" aria-label="Caminho de navegação"><a href="../blog.html">Blog</a><span aria-hidden="true">/</span><span>Front-end</span></nav>
+    <article aria-labelledby="article-title">
+      <header class="article-header">
+        <h1 id="article-title">Componentes React que continuam simples com o tempo</h1>
+        <p class="article-intro">Separar apresentação, estado e regras de negócio ajuda a manter o fluxo de uma interface compreensível conforme o projeto cresce.</p>
+        <div class="article-meta"><a href="../index.html#about" class="article-author"><span class="author-initials" aria-hidden="true">aa.</span>Anderson Alves</a><time datetime="2026-07-18">18 de jul. de 2026</time><span>2 min de leitura</span></div>
+      </header>
+      <figure class="article-cover"><img src="../assets/blog/react-components.png" alt="Diagrama ilustrativo de componentes de uma interface React" width="1200" height="720" fetchpriority="high"><figcaption>Front-end · Notas de desenvolvimento</figcaption></figure>
+      <div class="article-layout">
+        <aside class="article-sidebar"><nav class="article-toc" aria-labelledby="contents-title"><h2 id="contents-title">Neste artigo</h2><ol><li><a href="#papel-do-componente">Dê um papel claro ao componente</a></li><li><a href="#sinais-de-crescimento">Perceba os sinais de complexidade</a></li><li><a href="#extraia-com-criterio">Divida com um motivo, não com uma meta de arquivos</a></li></ol><a class="article-back" href="../blog.html#posts">Voltar para todos os artigos</a></nav></aside>
+        <div class="article-body">
+          <section id="papel-do-componente" aria-labelledby="heading-papel-do-componente"><h2 id="heading-papel-do-componente">Dê um papel claro ao componente</h2><p>Um componente fica mais fácil de entender quando sua responsabilidade é reconhecível. Uma tela pode organizar dados e interações, enquanto componentes menores apresentam uma parte da informação e recebem ações por meio de propriedades.</p><p>Ao ler o nome e as propriedades de um componente, deve ser possível formar uma ideia do que ele representa na interface. Se isso exige acompanhar muitos detalhes internos, talvez as responsabilidades ainda estejam misturadas.</p></section>
+          <section id="sinais-de-crescimento" aria-labelledby="heading-sinais-de-crescimento"><h2 id="heading-sinais-de-crescimento">Perceba os sinais de complexidade</h2><p>Quando um componente cresce, procure sinais: muitos estados locais sem relação entre si, várias condições na apresentação, funções grandes e propriedades com significados ambíguos.</p><p>Nesses casos, extrair uma parte visual ou uma lógica reutilizável pode deixar o fluxo mais fácil de acompanhar. A extração deve dar um nome a uma responsabilidade real, e não apenas reduzir o número de linhas do arquivo original.</p></section>
+          <section id="extraia-com-criterio" aria-labelledby="heading-extraia-com-criterio"><h2 id="heading-extraia-com-criterio">Divida com um motivo, não com uma meta de arquivos</h2><p>O objetivo não é criar muitos arquivos sem necessidade. É fazer com que cada parte da interface seja previsível, mais fácil de testar e simples de alterar quando uma necessidade nova aparecer.</p><p>Depois de uma extração, releia o componente que ficou. Se a sequência das decisões estiver mais clara e o novo componente tiver um papel compreensível, a divisão provavelmente ajudou.</p></section>
+
+          <div class="article-end"><p>Uma dúvida ou uma ideia a partir desta leitura?</p><a href="mailto:andersonalves.codes@gmail.com?subject=Sobre%20o%20artigo%3A%20Componentes%20React%20que%20continuam%20simples%20com%20o%20tempo">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
+        </div>
+      </div>
+    </article>
+    <nav class="article-pagination" aria-label="Navegação entre artigos"><a href="../blog.html#posts">Voltar ao blog</a><a href="apis-rest.html"><span>Próxima leitura</span>APIs REST: o básico que precisa estar bem feito <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav>
+    <section class="related-section" aria-labelledby="related-title"><h2 id="related-title">Continue a leitura<span class="accent">.</span></h2><div class="related-grid"><a href="acessibilidade-teclado.html"><span>Front-end · 3 min</span><h3>Um menu acessível começa pelo teclado</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="testes-javascript.html"><span>JavaScript · 3 min</span><h3>Testes em JavaScript: comece pela regra de negócio</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></section>
+  </main>
+  <footer class="site-footer container"><a class="nav-logo" href="../index.html" aria-label="Ir ao portfólio">aa<span class="logo-dot">.</span></a><p>Notas de desenvolvimento por Anderson Alves.</p><span>© <span data-year>2026</span></span><a class="back-to-top" href="#main">Voltar ao início</a></footer>
+</body>
+</html>

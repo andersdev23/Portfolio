@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git: commits pequenos, histórico que faz sentido | Anderson Alves</title>
+  <meta name="description" content="Um fluxo simples para inspecionar alterações, criar uma branch, preparar um commit e revisar exatamente o que será registrado.">
+  <meta name="author" content="Anderson Alves">
+  <meta name="theme-color" content="#171a17">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Git: commits pequenos, histórico que faz sentido">
+  <meta property="og:description" content="Um fluxo simples para inspecionar alterações, criar uma branch, preparar um commit e revisar exatamente o que será registrado.">
+  <meta property="og:url" content="https://anderson-alves-portfolio.vercel.app/artigos/git-commits-branches.html">
+  <meta property="og:image" content="https://anderson-alves-portfolio.vercel.app/assets/blog/git-workflow.svg">
+  <link rel="canonical" href="https://anderson-alves-portfolio.vercel.app/artigos/git-commits-branches.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../article.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Git: commits pequenos, histórico que faz sentido","description":"Um fluxo simples para inspecionar alterações, criar uma branch, preparar um commit e revisar exatamente o que será registrado.","image":"https://anderson-alves-portfolio.vercel.app/assets/blog/git-workflow.svg","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Person","name":"Anderson Alves","url":"https://anderson-alves-portfolio.vercel.app/"},"inLanguage":"pt-BR","mainEntityOfPage":{"@type":"WebPage","@id":"https://anderson-alves-portfolio.vercel.app/artigos/git-commits-branches.html"}}</script>
+  <script src="../script.js" defer></script>
+</head>
+<body class="article-page">
+
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header"><div class="nav-shell container">
+    <a class="nav-logo" href="../index.html" aria-label="Anderson Alves, início">aa<span class="logo-dot">.</span><span class="logo-caption">Anderson Alves</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal"><a href="../index.html">Portfólio</a><a href="../blog.html#posts">Artigos</a><a href="../blog.html#topics">Tópicos</a></nav>
+    <a class="nav-contact" href="../index.html#contact">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+  </div></header>
+  <main id="main" class="article-main container">
+    <nav class="breadcrumbs" aria-label="Caminho de navegação"><a href="../blog.html">Blog</a><span aria-hidden="true">/</span><span>Workflow</span></nav>
+    <article aria-labelledby="article-title">
+      <header class="article-header">
+        <h1 id="article-title">Git: commits pequenos, histórico que faz sentido</h1>
+        <p class="article-intro">O histórico de um projeto também é uma forma de comunicação. Um commit que responde a uma mudança clara ajuda a revisar o trabalho e a entender por que uma decisão foi tomada.</p>
+        <div class="article-meta"><a href="../index.html#about" class="article-author"><span class="author-initials" aria-hidden="true">aa.</span>Anderson Alves</a><time datetime="2026-11-22">22 de nov. de 2026</time><span>3 min de leitura</span></div>
+      </header>
+      <figure class="article-cover"><img src="../assets/blog/git-workflow.svg" alt="Diagrama de commits com uma branch que se separa e volta à linha principal" width="1200" height="720" fetchpriority="high"><figcaption>Workflow · Notas de desenvolvimento</figcaption></figure>
+      <div class="article-layout">
+        <aside class="article-sidebar"><nav class="article-toc" aria-labelledby="contents-title"><h2 id="contents-title">Neste artigo</h2><ol><li><a href="#uma-mudanca-por-vez">Defina a intenção antes de agrupar arquivos</a></li><li><a href="#crie-uma-branch">Dê um contexto ao trabalho com uma branch</a></li><li><a href="#revise-o-commit">Escolha o que vai entrar e revise novamente</a></li><li><a href="#corrija-a-selecao">Retire um arquivo da seleção sem apagar a edição</a></li><li><a href="#deixe-uma-historia-legivel">Escreva para quem vai revisar depois</a></li></ol><a class="article-back" href="../blog.html#posts">Voltar para todos os artigos</a></nav></aside>
+        <div class="article-body">
+          <section id="uma-mudanca-por-vez" aria-labelledby="heading-uma-mudanca-por-vez"><h2 id="heading-uma-mudanca-por-vez">Defina a intenção antes de agrupar arquivos</h2><p>“Pequeno” não significa uma quantidade fixa de linhas. Um commit útil reúne uma alteração coerente: corrigir uma validação, adicionar uma página de artigo ou ajustar o menu no celular. A ideia é conseguir explicar o resultado em uma frase.</p><p>Misturar uma correção de comportamento, uma troca de formatação e uma funcionalidade nova torna a revisão mais cansativa. Se os assuntos podem ser entendidos e validados separadamente, vale separá-los no histórico também.</p><p>Antes de começar, observe o estado do repositório. Assim você distingue o que já estava em andamento daquilo que vai mudar agora.</p><div class="code-example"><span class="code-language">Terminal</span><pre tabindex="0" aria-label="Exemplo de código: Terminal"><code>git status --short
+git diff</code></pre></div></section>
+          <section id="crie-uma-branch" aria-labelledby="heading-crie-uma-branch"><h2 id="heading-crie-uma-branch">Dê um contexto ao trabalho com uma branch</h2><p>Uma branch permite desenvolver uma linha de trabalho com um nome reconhecível. O comando abaixo cria uma branch e passa a trabalhar nela. O nome é um exemplo: use algo que descreva o objetivo da alteração.</p><div class="code-example"><span class="code-language">Terminal</span><pre tabindex="0" aria-label="Exemplo de código: Terminal"><code>git switch -c feat/paginas-artigos</code></pre></div><p>Criar a branch não publica o projeto nem abre um pull request. É uma organização local do trabalho. Alterações que ainda não foram registradas não se tornam um backup só porque você mudou de branch; continue inspecionando e registrando o que estiver pronto.</p></section>
+          <section id="revise-o-commit" aria-labelledby="heading-revise-o-commit"><h2 id="heading-revise-o-commit">Escolha o que vai entrar e revise novamente</h2><p>O próximo exemplo supõe que <code>blog.html</code> e <code>artigos/novo-artigo.html</code> sejam os arquivos alterados para uma publicação. Adicionar caminhos explícitos ajuda a perceber se algum arquivo entrou por engano.</p><div class="code-example"><span class="code-language">Terminal</span><pre tabindex="0" aria-label="Exemplo de código: Terminal"><code>git add blog.html artigos/novo-artigo.html
+git diff --staged
+git status --short</code></pre></div><p>O conteúdo preparado fica na área de staging. A revisão de <code>git diff --staged</code> mostra o que está pronto para o próximo commit. Se você editar o arquivo depois de executar <code>git add</code>, a nova edição precisa ser preparada novamente para fazer parte desse mesmo registro.</p><p>Quando a mudança estiver revisada e validada, escreva uma mensagem que descreva o resultado.</p><div class="code-example"><span class="code-language">Terminal</span><pre tabindex="0" aria-label="Exemplo de código: Terminal"><code>git commit -m &quot;Adiciona página de artigo e link no blog&quot;</code></pre></div></section>
+          <section id="corrija-a-selecao" aria-labelledby="heading-corrija-a-selecao"><h2 id="heading-corrija-a-selecao">Retire um arquivo da seleção sem apagar a edição</h2><p>Se um arquivo entrou na área de staging antes da hora, você pode retirar essa seleção com o comando abaixo. Neste uso, <code>--staged</code> atua sobre o índice; as edições no arquivo de trabalho permanecem.</p><div class="code-example"><span class="code-language">Terminal</span><pre tabindex="0" aria-label="Exemplo de código: Terminal"><code>git restore --staged blog.html</code></pre></div><p>Confira o resultado com <code>git status</code> e continue a revisão. Entender a diferença entre o arquivo de trabalho, a área de staging e o histórico evita tratar todos os comandos de restauração como se fizessem a mesma coisa.</p></section>
+          <section id="deixe-uma-historia-legivel" aria-labelledby="heading-deixe-uma-historia-legivel"><h2 id="heading-deixe-uma-historia-legivel">Escreva para quem vai revisar depois</h2><p>Uma mensagem como “ajustes” não conta o que mudou. “Corrige navegação dos artigos no blog” permite antecipar o objetivo antes mesmo de abrir o diff. Quando houver uma decisão menos óbvia, o corpo da mensagem pode explicar o motivo.</p><p>Antes de registrar, confira se o projeto continua funcionando e se não foram incluídos arquivos temporários. Esse cuidado não precisa transformar cada mudança em um processo longo: basta uma revisão proporcional ao que foi alterado.</p><p>O resultado é um histórico que ajuda na manutenção. Cada commit se torna uma etapa compreensível, em vez de um conjunto de arquivos sem relação aparente.</p></section>
+          <section class="article-references" id="referencias" aria-labelledby="references-title"><h2 id="references-title">Referências e próximos passos</h2><p>Documentação oficial para consultar os comportamentos apresentados:</p><ul><li><a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener noreferrer">Git — git switch <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span class="sr-only"> (abre em nova aba)</span></a></li><li><a href="https://git-scm.com/docs/git-add" target="_blank" rel="noopener noreferrer">Git — git add <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span class="sr-only"> (abre em nova aba)</span></a></li><li><a href="https://git-scm.com/docs/git-restore" target="_blank" rel="noopener noreferrer">Git — git restore <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span class="sr-only"> (abre em nova aba)</span></a></li></ul></section>
+          <div class="article-end"><p>Uma dúvida ou uma ideia a partir desta leitura?</p><a href="mailto:andersonalves.codes@gmail.com?subject=Sobre%20o%20artigo%3A%20Git%3A%20commits%20pequenos%2C%20hist%C3%B3rico%20que%20faz%20sentido">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
+        </div>
+      </div>
+    </article>
+    <nav class="article-pagination" aria-label="Navegação entre artigos"><a href="../blog.html#posts">Voltar ao blog</a><a href="codigo-limpo.html"><span>Próxima leitura</span>Como pensar em código limpo desde o primeiro projeto <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav>
+    <section class="related-section" aria-labelledby="related-title"><h2 id="related-title">Continue a leitura<span class="accent">.</span></h2><div class="related-grid"><a href="testes-javascript.html"><span>JavaScript · 3 min</span><h3>Testes em JavaScript: comece pela regra de negócio</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="acessibilidade-teclado.html"><span>Front-end · 3 min</span><h3>Um menu acessível começa pelo teclado</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></section>
+  </main>
+  <footer class="site-footer container"><a class="nav-logo" href="../index.html" aria-label="Ir ao portfólio">aa<span class="logo-dot">.</span></a><p>Notas de desenvolvimento por Anderson Alves.</p><span>© <span data-year>2026</span></span><a class="back-to-top" href="#main">Voltar ao início</a></footer>
+</body>
+</html>

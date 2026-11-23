@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APIs REST: o básico que precisa estar bem feito | Anderson Alves</title>
+  <meta name="description" content="Rotas claras, validação e respostas consistentes para tornar uma API mais previsível para quem a consome.">
+  <meta name="author" content="Anderson Alves">
+  <meta name="theme-color" content="#171a17">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="APIs REST: o básico que precisa estar bem feito">
+  <meta property="og:description" content="Rotas claras, validação e respostas consistentes para tornar uma API mais previsível para quem a consome.">
+  <meta property="og:url" content="https://anderson-alves-portfolio.vercel.app/artigos/apis-rest.html">
+  <meta property="og:image" content="https://anderson-alves-portfolio.vercel.app/assets/blog/api-rest.png">
+  <link rel="canonical" href="https://anderson-alves-portfolio.vercel.app/artigos/apis-rest.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../article.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"APIs REST: o básico que precisa estar bem feito","description":"Rotas claras, validação e respostas consistentes para tornar uma API mais previsível para quem a consome.","image":"https://anderson-alves-portfolio.vercel.app/assets/blog/api-rest.png","datePublished":"2026-07-10","dateModified":"2026-11-22","author":{"@type":"Person","name":"Anderson Alves","url":"https://anderson-alves-portfolio.vercel.app/"},"inLanguage":"pt-BR","mainEntityOfPage":{"@type":"WebPage","@id":"https://anderson-alves-portfolio.vercel.app/artigos/apis-rest.html"}}</script>
+  <script src="../script.js" defer></script>
+</head>
+<body class="article-page">
+
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header"><div class="nav-shell container">
+    <a class="nav-logo" href="../index.html" aria-label="Anderson Alves, início">aa<span class="logo-dot">.</span><span class="logo-caption">Anderson Alves</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal"><a href="../index.html">Portfólio</a><a href="../blog.html#posts">Artigos</a><a href="../blog.html#topics">Tópicos</a></nav>
+    <a class="nav-contact" href="../index.html#contact">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+  </div></header>
+  <main id="main" class="article-main container">
+    <nav class="breadcrumbs" aria-label="Caminho de navegação"><a href="../blog.html">Blog</a><span aria-hidden="true">/</span><span>Back-end</span></nav>
+    <article aria-labelledby="article-title">
+      <header class="article-header">
+        <h1 id="article-title">APIs REST: o básico que precisa estar bem feito</h1>
+        <p class="article-intro">Antes de pensar em uma arquitetura complexa, vale cuidar do contrato que o restante da aplicação vai consumir.</p>
+        <div class="article-meta"><a href="../index.html#about" class="article-author"><span class="author-initials" aria-hidden="true">aa.</span>Anderson Alves</a><time datetime="2026-07-10">10 de jul. de 2026</time><span>2 min de leitura</span></div>
+      </header>
+      <figure class="article-cover"><img src="../assets/blog/api-rest.png" alt="Ilustração de uma requisição e resposta de API REST" width="1200" height="720" fetchpriority="high"><figcaption>Back-end · Notas de desenvolvimento</figcaption></figure>
+      <div class="article-layout">
+        <aside class="article-sidebar"><nav class="article-toc" aria-labelledby="contents-title"><h2 id="contents-title">Neste artigo</h2><ol><li><a href="#contrato-previsivel">Construa um contrato previsível</a></li><li><a href="#validacao-e-erros">Trate validação e erros como parte da interface</a></li><li><a href="#seguranca-e-operacao">Pense no funcionamento além da resposta</a></li></ol><a class="article-back" href="../blog.html#posts">Voltar para todos os artigos</a></nav></aside>
+        <div class="article-body">
+          <section id="contrato-previsivel" aria-labelledby="heading-contrato-previsivel"><h2 id="heading-contrato-previsivel">Construa um contrato previsível</h2><p>Uma API boa é previsível. Rotas devem representar recursos, os métodos HTTP precisam carregar significado e as respostas devem manter um formato consistente. Isso reduz a necessidade de tratamentos especiais no front-end.</p><p>Ao definir uma rota, pense em quem vai utilizá-la. O caminho, os dados esperados e os resultados possíveis precisam contar a mesma história. Uma documentação simples já ajuda a tornar esse acordo visível.</p></section>
+          <section id="validacao-e-erros" aria-labelledby="heading-validacao-e-erros"><h2 id="heading-validacao-e-erros">Trate validação e erros como parte da interface</h2><p>Validação também faz parte do contrato. Dados inválidos precisam ser identificados na entrada, com mensagens claras e respostas coerentes. Isso evita que uma solicitação aparentemente aceita cause um problema silencioso mais adiante.</p><p>Quem consome a API deve conseguir distinguir uma entrada inválida, um recurso ausente e uma falha inesperada. O formato da mensagem deve ajudar a tratar o caso sem expor detalhes internos desnecessários.</p></section>
+          <section id="seguranca-e-operacao" aria-labelledby="heading-seguranca-e-operacao"><h2 id="heading-seguranca-e-operacao">Pense no funcionamento além da resposta</h2><p>Autenticação, autorização, limites de requisição e registros de operação devem ser considerados conforme o contexto da aplicação. Uma API não fica pronta apenas porque um endpoint devolveu o resultado esperado em um teste manual.</p><p>Comece pelos fluxos que o produto precisa executar e pelas falhas que ele deve tratar. Depois valide essas situações de forma repetível, mantendo o contrato compreensível para quem desenvolve e para quem consome o serviço.</p></section>
+
+          <div class="article-end"><p>Uma dúvida ou uma ideia a partir desta leitura?</p><a href="mailto:andersonalves.codes@gmail.com?subject=Sobre%20o%20artigo%3A%20APIs%20REST%3A%20o%20b%C3%A1sico%20que%20precisa%20estar%20bem%20feito">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
+        </div>
+      </div>
+    </article>
+    <nav class="article-pagination" aria-label="Navegação entre artigos"><a href="../blog.html#posts">Voltar ao blog</a><a href="modelagem-mysql.html"><span>Próxima leitura</span>Modelagem MySQL para sistemas pequenos <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav>
+    <section class="related-section" aria-labelledby="related-title"><h2 id="related-title">Continue a leitura<span class="accent">.</span></h2><div class="related-grid"><a href="testes-javascript.html"><span>JavaScript · 3 min</span><h3>Testes em JavaScript: comece pela regra de negócio</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="acessibilidade-teclado.html"><span>Front-end · 3 min</span><h3>Um menu acessível começa pelo teclado</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></section>
+  </main>
+  <footer class="site-footer container"><a class="nav-logo" href="../index.html" aria-label="Ir ao portfólio">aa<span class="logo-dot">.</span></a><p>Notas de desenvolvimento por Anderson Alves.</p><span>© <span data-year>2026</span></span><a class="back-to-top" href="#main">Voltar ao início</a></footer>
+</body>
+</html>

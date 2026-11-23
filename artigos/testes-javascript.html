@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testes em JavaScript: comece pela regra de negócio | Anderson Alves</title>
+  <meta name="description" content="Um exemplo de reserva de estoque para aprender a testar resultados, limites e erros usando o test runner nativo do Node.js.">
+  <meta name="author" content="Anderson Alves">
+  <meta name="theme-color" content="#171a17">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Testes em JavaScript: comece pela regra de negócio">
+  <meta property="og:description" content="Um exemplo de reserva de estoque para aprender a testar resultados, limites e erros usando o test runner nativo do Node.js.">
+  <meta property="og:url" content="https://anderson-alves-portfolio.vercel.app/artigos/testes-javascript.html">
+  <meta property="og:image" content="https://anderson-alves-portfolio.vercel.app/assets/blog/software-tests.svg">
+  <link rel="canonical" href="https://anderson-alves-portfolio.vercel.app/artigos/testes-javascript.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../article.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Testes em JavaScript: comece pela regra de negócio","description":"Um exemplo de reserva de estoque para aprender a testar resultados, limites e erros usando o test runner nativo do Node.js.","image":"https://anderson-alves-portfolio.vercel.app/assets/blog/software-tests.svg","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Person","name":"Anderson Alves","url":"https://anderson-alves-portfolio.vercel.app/"},"inLanguage":"pt-BR","mainEntityOfPage":{"@type":"WebPage","@id":"https://anderson-alves-portfolio.vercel.app/artigos/testes-javascript.html"}}</script>
+  <script src="../script.js" defer></script>
+</head>
+<body class="article-page">
+
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header"><div class="nav-shell container">
+    <a class="nav-logo" href="../index.html" aria-label="Anderson Alves, início">aa<span class="logo-dot">.</span><span class="logo-caption">Anderson Alves</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal"><a href="../index.html">Portfólio</a><a href="../blog.html#posts">Artigos</a><a href="../blog.html#topics">Tópicos</a></nav>
+    <a class="nav-contact" href="../index.html#contact">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+  </div></header>
+  <main id="main" class="article-main container">
+    <nav class="breadcrumbs" aria-label="Caminho de navegação"><a href="../blog.html">Blog</a><span aria-hidden="true">/</span><span>JavaScript</span></nav>
+    <article aria-labelledby="article-title">
+      <header class="article-header">
+        <h1 id="article-title">Testes em JavaScript: comece pela regra de negócio</h1>
+        <p class="article-intro">Uma tela pode parecer correta enquanto a regra por trás dela está errada. Testar uma função pequena é uma forma prática de começar a verificar o comportamento do sistema sem depender de cliques no navegador.</p>
+        <div class="article-meta"><a href="../index.html#about" class="article-author"><span class="author-initials" aria-hidden="true">aa.</span>Anderson Alves</a><time datetime="2026-11-22">22 de nov. de 2026</time><span>3 min de leitura</span></div>
+      </header>
+      <figure class="article-cover"><img src="../assets/blog/software-tests.svg" alt="Diagrama de três cenários de teste ligados a uma função JavaScript" width="1200" height="720" fetchpriority="high"><figcaption>JavaScript · Notas de desenvolvimento</figcaption></figure>
+      <div class="article-layout">
+        <aside class="article-sidebar"><nav class="article-toc" aria-labelledby="contents-title"><h2 id="contents-title">Neste artigo</h2><ol><li><a href="#defina-o-comportamento">Antes do teste, defina o comportamento</a></li><li><a href="#isole-a-regra">Isole a regra da interface</a></li><li><a href="#escreva-os-cenarios">Teste o caminho esperado e os limites</a></li><li><a href="#revise-o-que-falta">Use os testes para revelar decisões que faltam</a></li></ol><a class="article-back" href="../blog.html#posts">Voltar para todos os artigos</a></nav></aside>
+        <div class="article-body">
+          <section id="defina-o-comportamento" aria-labelledby="heading-defina-o-comportamento"><h2 id="heading-defina-o-comportamento">Antes do teste, defina o comportamento</h2><p>Considere um exemplo didático: uma função recebe o estoque disponível e a quantidade solicitada, e devolve o saldo depois da reserva. O objetivo aqui é testar uma regra isolada; não representar a implementação de um sistema de logística completo.</p><p>Antes de escrever código, descreva o contrato: estoque e quantidade devem ser números inteiros, o estoque não pode ser negativo, a quantidade precisa ser positiva e a reserva não pode superar o saldo. Com essas decisões explícitas, os testes passam a responder perguntas concretas.</p><p>Por exemplo: reservar três unidades de um estoque de dez deve retornar sete. Reservar todas deve retornar zero. Pedir mais do que existe deve gerar um erro, em vez de produzir um saldo negativo.</p></section>
+          <section id="isole-a-regra" aria-labelledby="heading-isole-a-regra"><h2 id="heading-isole-a-regra">Isole a regra da interface</h2><p>Crie o arquivo <code>estoque.mjs</code>. A função não precisa conhecer formulários, banco de dados ou mensagens da interface. Ela recebe valores e devolve um resultado, ou informa que a operação é inválida.</p><div class="code-example"><span class="code-language">JavaScript · estoque.mjs</span><pre tabindex="0" aria-label="Exemplo de código: JavaScript · estoque.mjs"><code>export function reservar(estoque, quantidade) {
+  if (!Number.isInteger(estoque) || estoque &lt; 0) {
+    throw new TypeError(&#39;Estoque inválido&#39;);
+  }
+
+  if (!Number.isInteger(quantidade) || quantidade &lt;= 0) {
+    throw new TypeError(&#39;Quantidade inválida&#39;);
+  }
+
+  if (quantidade &gt; estoque) {
+    throw new RangeError(&#39;Estoque insuficiente&#39;);
+  }
+
+  return estoque - quantidade;
+}</code></pre></div><p>Essa separação permite mudar a apresentação sem reescrever a regra. Também evita que cada teste precise montar uma página inteira só para verificar uma subtração com restrições.</p></section>
+          <section id="escreva-os-cenarios" aria-labelledby="heading-escreva-os-cenarios"><h2 id="heading-escreva-os-cenarios">Teste o caminho esperado e os limites</h2><p>Em um Node.js com suporte ao test runner nativo, crie <code>estoque.test.mjs</code> ao lado da função. O módulo <code>node:test</code> organiza os cenários; <code>node:assert/strict</code> compara resultados e verifica exceções.</p><div class="code-example"><span class="code-language">JavaScript · estoque.test.mjs</span><pre tabindex="0" aria-label="Exemplo de código: JavaScript · estoque.test.mjs"><code>import test from &#39;node:test&#39;;
+import assert from &#39;node:assert/strict&#39;;
+import { reservar } from &#39;./estoque.mjs&#39;;
+
+test(&#39;desconta a quantidade reservada&#39;, () =&gt; {
+  assert.equal(reservar(10, 3), 7);
+});
+
+test(&#39;permite reservar todo o saldo&#39;, () =&gt; {
+  assert.equal(reservar(3, 3), 0);
+});
+
+test(&#39;rejeita uma reserva acima do saldo&#39;, () =&gt; {
+  assert.throws(() =&gt; reservar(2, 3), RangeError);
+});
+
+test(&#39;rejeita quantidade igual a zero&#39;, () =&gt; {
+  assert.throws(() =&gt; reservar(10, 0), TypeError);
+});
+
+test(&#39;rejeita estoque negativo&#39;, () =&gt; {
+  assert.throws(() =&gt; reservar(-1, 1), TypeError);
+});</code></pre></div><p>Execute o comando abaixo na pasta dos dois arquivos. Não é necessário instalar uma biblioteca de testes para este exemplo.</p><div class="code-example"><span class="code-language">Terminal</span><pre tabindex="0" aria-label="Exemplo de código: Terminal"><code>node --test estoque.test.mjs</code></pre></div></section>
+          <section id="revise-o-que-falta" aria-labelledby="heading-revise-o-que-falta"><h2 id="heading-revise-o-que-falta">Use os testes para revelar decisões que faltam</h2><p>Depois dos primeiros cenários, pergunte o que ainda não foi decidido. Quantidades fracionadas seriam permitidas em outro domínio? O formulário entrega números ou textos? A resposta deve orientar o contrato da função e a conversão de dados na entrada da aplicação.</p><p>Experimente acrescentar casos para números fracionados e valores como <code>"3"</code>. Nesta implementação, ambos devem ser rejeitados. Depois altere a regra de propósito e veja se o teste correspondente falha: isso ajuda a conferir se a verificação realmente protege o comportamento descrito.</p><p>Uma suíte verde confirma apenas os cenários exercitados. Integrações, persistência e concorrência exigem outras verificações. O primeiro passo útil é ter testes pequenos, com nomes que expliquem a intenção e falhas que apontem uma regra específica.</p></section>
+          <section class="article-references" id="referencias" aria-labelledby="references-title"><h2 id="references-title">Referências e próximos passos</h2><p>Documentação oficial para consultar os comportamentos apresentados:</p><ul><li><a href="https://nodejs.org/api/test.html" target="_blank" rel="noopener noreferrer">Node.js — Test runner <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span class="sr-only"> (abre em nova aba)</span></a></li><li><a href="https://nodejs.org/api/assert.html" target="_blank" rel="noopener noreferrer">Node.js — Assert <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg><span class="sr-only"> (abre em nova aba)</span></a></li></ul></section>
+          <div class="article-end"><p>Uma dúvida ou uma ideia a partir desta leitura?</p><a href="mailto:andersonalves.codes@gmail.com?subject=Sobre%20o%20artigo%3A%20Testes%20em%20JavaScript%3A%20comece%20pela%20regra%20de%20neg%C3%B3cio">Vamos conversar <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
+        </div>
+      </div>
+    </article>
+    <nav class="article-pagination" aria-label="Navegação entre artigos"><a href="../blog.html#posts">Voltar ao blog</a><a href="acessibilidade-teclado.html"><span>Próxima leitura</span>Um menu acessível começa pelo teclado <svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav>
+    <section class="related-section" aria-labelledby="related-title"><h2 id="related-title">Continue a leitura<span class="accent">.</span></h2><div class="related-grid"><a href="codigo-limpo.html"><span>JavaScript · 2 min</span><h3>Como pensar em código limpo desde o primeiro projeto</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a href="acessibilidade-teclado.html"><span>Front-end · 3 min</span><h3>Um menu acessível começa pelo teclado</h3><svg class="icon small" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></section>
+  </main>
+  <footer class="site-footer container"><a class="nav-logo" href="../index.html" aria-label="Ir ao portfólio">aa<span class="logo-dot">.</span></a><p>Notas de desenvolvimento por Anderson Alves.</p><span>© <span data-year>2026</span></span><a class="back-to-top" href="#main">Voltar ao início</a></footer>
+</body>
+</html>

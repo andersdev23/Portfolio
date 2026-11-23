@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://anderson-alves-portfolio.vercel.app/</loc>
-    <lastmod>2026-07-29</lastmod>
-  </url>
-
-  <url>
-    <loc>https://anderson-alves-portfolio.vercel.app/blog.html</loc>
-    <lastmod>2026-07-29</lastmod>
-  </url>
-
+  <url><loc>https://anderson-alves-portfolio.vercel.app/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/blog.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/artigos/testes-javascript.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/artigos/acessibilidade-teclado.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/artigos/git-commits-branches.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/artigos/codigo-limpo.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/artigos/componentes-react.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/artigos/apis-rest.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/artigos/modelagem-mysql.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://anderson-alves-portfolio.vercel.app/artigos/rotina-estudos.html</loc><lastmod>2026-11-22</lastmod></url>
 </urlset>
