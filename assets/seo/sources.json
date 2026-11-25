@@ -1,0 +1,82 @@
+[
+  {
+    "brand": "Evonline",
+    "website": "https://www.evonline.com.br/",
+    "logo": "evonline-logo.svg",
+    "logoSource": "https://www.evonline.com.br/ (inline SVG .logo-header)",
+    "image": "evonline-site.webp",
+    "imageSource": "https://www.evonline.com.br/",
+    "imageType": "Screenshot of official website; transient consent/contact overlays omitted",
+    "capturedAt": "2026-11-24"
+  },
+  {
+    "brand": "Tríadlog",
+    "website": "https://www.triadlog.com.br/",
+    "logo": "triadlog-logo.png",
+    "logoSource": "https://www.triadlog.com.br/wp-content/uploads/marca-trialog.png",
+    "image": "triadlog-photo.jpg",
+    "imageSource": "https://www.triadlog.com.br/wp-content/uploads/gestao-de-estoque-e-armazenagem-curitiba-1.jpg",
+    "imageType": "Original website warehouse photograph",
+    "capturedAt": "2026-11-24"
+  },
+  {
+    "brand": "Wizard",
+    "website": "https://wizardidiomas.com.br/",
+    "logo": "wizard-logo.webp",
+    "logoSource": "https://wizardidiomas.com.br/wp-content/uploads/2025/08/logo.png",
+    "image": "wizard-site.webp",
+    "imageSource": "https://wizardidiomas.com.br/",
+    "imageType": "Screenshot of official website; transient consent/contact overlays omitted",
+    "capturedAt": "2026-11-24"
+  },
+  {
+    "brand": "Filtros Apol",
+    "website": "https://filtrosapol.com.br/",
+    "logo": "filtros-apol-logo.png",
+    "logoSource": "https://filtrosapol.com.br/wp-content/uploads/2026/09/filtors.png",
+    "image": "filtros-apol-site.webp",
+    "imageSource": "https://filtrosapol.com.br/",
+    "imageType": "Screenshot of official website; transient consent/contact overlays omitted",
+    "capturedAt": "2026-11-24"
+  },
+  {
+    "brand": "SegVita",
+    "website": "https://segvita.com.br/",
+    "logo": "segvita-logo.png",
+    "logoSource": "https://segvita.com.br/wp-content/uploads/2025/08/segvita-logo.png",
+    "image": "segvita-site.webp",
+    "imageSource": "https://segvita.com.br/",
+    "imageType": "Screenshot of official website; transient consent/contact overlays omitted",
+    "capturedAt": "2026-11-24"
+  },
+  {
+    "brand": "Top Office",
+    "website": "https://www.topofficemoveis.com.br/",
+    "logo": "top-office-logo.png",
+    "logoSource": "https://www.topofficemoveis.com.br/wp-content/uploads/2025/06/Logo-1.png",
+    "image": "top-office-site.webp",
+    "imageSource": "https://www.topofficemoveis.com.br/",
+    "imageType": "Screenshot of official website; transient consent/contact overlays omitted",
+    "capturedAt": "2026-11-24"
+  },
+  {
+    "brand": "Mercadão das Baterias",
+    "website": "https://mercadaodasbateriaspr.com.br/",
+    "logo": "mercadao-baterias-logo.png",
+    "logoSource": "https://mercadaodasbateriaspr.com.br/wp-content/uploads/2023/04/logo-mercadao.png",
+    "image": "mercadao-baterias-site.webp",
+    "imageSource": "https://mercadaodasbateriaspr.com.br/",
+    "imageType": "Screenshot of official website; transient consent/contact overlays omitted",
+    "capturedAt": "2026-11-24"
+  },
+  {
+    "brand": "Airpress",
+    "website": "https://www.airpresscompressores.com.br/",
+    "logo": "airpress-logo.png",
+    "logoSource": "https://www.airpresscompressores.com.br/wp-content/uploads/pneumatica-air-press-compressores-5.png",
+    "image": "airpress-site.webp",
+    "imageSource": "https://www.airpresscompressores.com.br/",
+    "imageType": "Screenshot of official website; transient consent/contact overlays omitted",
+    "capturedAt": "2026-11-24"
+  }
+]

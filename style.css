@@ -352,3 +352,94 @@ h2 { font-size: clamp(34px, 4.3vw, 56px); letter-spacing: -.035em; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .profile-stage { transform: none; } .agenda-preview, .project-feature:hover .agenda-preview { transform: none; }
 }
+
+/* SEO experience: original brands presented as an editorial project gallery. */
+.seo-section { padding-block: 104px 96px; border-bottom: 1px solid var(--border); }
+.seo-heading { gap: 40px; }
+.seo-heading > p { max-width: 36ch; font-size: 14px; line-height: 1.8; }
+.seo-agency { display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: clamp(32px, 5vw, 76px); padding-bottom: 64px; border-bottom: 1px solid var(--border); }
+.seo-agency-copy h3 { font-size: clamp(27px, 3vw, 38px); line-height: 1.25; letter-spacing: -.03em; }
+.seo-inline-logo { display: inline-block; width: 4em; height: auto; vertical-align: -.08em; margin-left: .08em; }
+.seo-agency-copy p { max-width: 52ch; margin-top: 20px; color: var(--text2); font-size: 15px; }
+.seo-agency-copy .text-link { margin-top: 22px; color: var(--accent); }
+.seo-art { --seo-paper: #eef0ec; position: relative; display: flex; flex-direction: column; width: 100%; min-width: 0; overflow: hidden; border-radius: 14px; background: var(--seo-paper); }
+.seo-agency-art { --seo-paper: #f1ebfa; min-height: 360px; aspect-ratio: 1.22; }
+.seo-art-triadlog { --seo-paper: #e6edf2; }
+.seo-art-wizard { --seo-paper: #f2e9ed; }
+.seo-art-filtros-apol { --seo-paper: #e6f1f4; }
+.seo-art-segvita { --seo-paper: #e7eee8; }
+.seo-art-top-office { --seo-paper: #e8edf1; }
+.seo-art-mercadao-baterias { --seo-paper: #102433; }
+.seo-art-airpress { --seo-paper: #24221c; }
+.seo-brand-bar { display: flex; align-items: center; flex: 0 0 102px; padding: 20px 28px; }
+.seo-brand-bar .seo-brand-logo { display: block; width: auto; height: auto; max-width: min(78%, 200px); max-height: 46px; object-fit: contain; }
+.seo-art-triadlog .seo-brand-logo, .seo-art-segvita .seo-brand-logo { max-height: 58px; }
+.seo-agency-art .seo-brand-logo { width: 180px; max-height: 44px; }
+.seo-site-preview { display: block; flex: 1; min-height: 0; margin-inline: 28px; overflow: hidden; border-radius: 7px 7px 0 0; background: #fff; box-shadow: 0 12px 28px #1321111c; transition: transform .65s var(--ease-out); }
+.seo-site-preview .seo-site-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.seo-art-triadlog .seo-site-image { object-position: center; }
+.seo-art-airpress .seo-site-image { object-position: center 65%; }
+.seo-work-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 22px; margin-block: 54px 30px; }
+.seo-work-heading h3 { font-size: 21px; letter-spacing: -.025em; line-height: 1.4; }
+.seo-work-heading p { color: var(--text2); font-size: 12px; }
+.seo-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 46px 32px; padding: 0; list-style: none; }
+.seo-project { min-width: 0; }
+.seo-project-link { display: block; height: 100%; border-radius: 14px; }
+.seo-project .seo-art { aspect-ratio: 1.5; }
+.seo-project-caption { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding-top: 22px; }
+.seo-project-caption h3 { font-size: clamp(21px, 2vw, 26px); line-height: 1.25; letter-spacing: -.025em; transition: color .25s; }
+.seo-project-caption p { margin-top: 7px; color: var(--text2); font-size: 14px; line-height: 1.65; }
+.seo-project-arrow { display: grid; place-items: center; flex: 0 0 44px; height: 44px; margin-top: -2px; border: 1px solid var(--border); border-radius: 50%; color: var(--text2); transition: background .25s, border-color .25s, color .25s; }
+.seo-project-arrow .icon { width: 19px; height: 19px; }
+.seo-project-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; margin-top: 18px; padding-top: 13px; border-top: 1px solid var(--border); color: var(--text2); font-size: 12px; line-height: 1.7; }
+.seo-project-domain { overflow-wrap: anywhere; }
+.seo-project-link:focus-visible .seo-project-arrow, .seo-project-link:hover .seo-project-arrow { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+.seo-project-link:focus-visible h3, .seo-project-link:hover h3 { color: var(--accent); }
+.seo-gallery-note { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 22px; padding: clamp(28px, 4vw, 58px); }
+.seo-gallery-note h3 { max-width: 17ch; font-size: clamp(27px, 3vw, 39px); line-height: 1.2; letter-spacing: -.03em; }
+.seo-gallery-note p { max-width: 43ch; font-size: 15px; color: var(--text2); line-height: 1.85; }
+.seo-gallery-note .text-link { color: var(--accent); }
+.seo-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .seo-project-link:hover .seo-site-preview, .seo-agency-art:hover .seo-site-preview { transform: translateY(-6px); }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .main-nav { gap: 20px; }
+  .seo-agency { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .seo-work-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .seo-projects { gap: 40px 24px; }
+  .seo-brand-bar { flex-basis: 88px; padding: 16px 22px; }
+  .seo-site-preview { margin-inline: 22px; }
+  .seo-brand-bar .seo-brand-logo { max-width: min(82%, 176px); max-height: 44px; }
+  .seo-art-triadlog .seo-brand-logo { max-height: 54px; }
+  .seo-art-segvita .seo-brand-logo { max-height: 52px; }
+  .seo-gallery-note { gap: 18px; padding: 26px; }
+  .seo-gallery-note p { font-size: 14px; }
+}
+@media (max-width: 760px) {
+  .seo-section { padding-block: 64px; }
+  .seo-heading h2 { font-size: clamp(32px, 7.5vw, 40px); }
+  .seo-heading > p { font-size: 14px; }
+  .seo-heading > p br, .seo-agency-copy h3 br { display: none; }
+  .seo-agency { grid-template-columns: 1fr; gap: 28px; padding-bottom: 38px; }
+  .seo-agency-copy h3 { font-size: 29px; }
+  .seo-agency-copy p { margin-top: 16px; }
+  .seo-agency-copy .text-link { margin-top: 16px; }
+  .seo-agency-art { min-height: 0; aspect-ratio: 1.2; }
+  .seo-work-heading { align-items: flex-start; flex-direction: column; gap: 8px; margin-block: 36px 26px; }
+  .seo-work-heading h3 { font-size: 21px; }
+  .seo-projects { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .seo-project .seo-art { aspect-ratio: 1.32; }
+  .seo-brand-bar { flex-basis: 88px; padding: 17px 22px; }
+  .seo-brand-bar .seo-brand-logo { max-width: min(82%, 190px); max-height: 44px; }
+  .seo-art-triadlog .seo-brand-logo { max-height: 54px; }
+  .seo-art-segvita .seo-brand-logo { max-height: 52px; }
+  .seo-site-preview { margin-inline: 22px; }
+  .seo-project-caption { padding-top: 19px; }
+  .seo-project-caption h3 { font-size: 23px; }
+  .seo-project-caption p { font-size: 14px; }
+  .seo-project-meta { margin-top: 15px; padding-top: 12px; }
+  .seo-gallery-note { gap: 18px; padding: 32px 0 0; border-top: 1px solid var(--border); }
+  .seo-gallery-note h3 { max-width: 20ch; font-size: 30px; }
+  .seo-gallery-note p { max-width: 42ch; font-size: 15px; }
+}
